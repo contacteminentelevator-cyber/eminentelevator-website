@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eminent Elevators | Hyderabad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --gold: #d4af37;
+      --dark: #111111;
+      --light: #f7f4ec;
+      --text: #222222;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #ffffff;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    header {
+      background: var(--dark);
+      color: #ffffff;
+      padding: 14px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      font-size: 0.9rem;
+    }
+    nav a {
+      color: #f5f5f5;
+      opacity: 0.8;
+    }
+    nav a:hover {
+      opacity: 1;
+      color: var(--gold);
+    }
+    .call-header {
+      font-size: 0.9rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    section {
+      padding: 60px 8%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 40px;
+      align-items: center;
+      background: radial-gradient(circle at top left, #fdf6df, #ffffff);
+      padding: 70px 0;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      margin-bottom: 10px;
+      color: var(--dark);
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero p { max-width: 520px; margin-bottom: 20px; }
+    .hero-tagline {
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: #111;
+      padding: 10px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .hero-card {
+      background: #181818;
+      border-radius: 22px;
+      padding: 18px;
+      color: #f5f5f5;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+    .hero-card-img {
+      background: linear-gradient(135deg, #444, #111);
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #bbb;
+    }
+    .hero-card-text {
+      padding: 16px 18px;
+      font-size: 0.85rem;
+    }
+
+    h2.section-title {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+      color: var(--dark);
+    }
+    .section-subtitle {
+      font-size: 0.96rem;
+      color: #666;
+      margin-bottom: 26px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 32px;
+    }
+    .card {
+      border-radius: 16px;
+      border: 1px solid #eee1b9;
+      background: #fffdf5;
+      padding: 16px 18px;
+    }
+    .card h3 { margin-bottom: 6px; }
+
+    ul.clean { list-style: none; }
+    ul.clean li::before {
+      content: "•";
+      color: var(--gold);
+      margin-right: 6px;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .pill {
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.06);
+      background: #faf7ea;
+      padding: 6px 12px;
+      font-size: 0.84rem;
+    }
+
+    .highlight-strip {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 18px 8%;
+      font-size: 0.95rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 32px;
+    }
+    .contact-box {
+      border-radius: 18px;
+      background: #111;
+      color: #fff;
+      padding: 18px 20px;
+    }
+
+    footer {
+      background: #000;
+      color: #bbb;
+      text-align: center;
+      font-size: 0.8rem;
+      padding: 10px;
+    }
+
+    @media (max-width: 900px) {
+      header { flex-wrap: wrap; gap: 10px; }
+      nav { width: 100%; margin-top: 6px; }
+      nav ul { justify-content: center; flex-wrap: wrap; }
+      .hero, .two-col, .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="logo">
+    <div class="logo-mark">EG</div>
+    <div>Eminent Elevators</div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#types">Types</a></li>
+      <li><a href="#why">Why Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="call-header">📞 8978625575</div>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="hero-tagline">Reliable Solutions for Vertical Transportation</div>
+    <h1><span>Eminent</span> Elevators</h1>
+    <p>Quality lifts, superior service, and trusted performance for homes, apartments, commercial buildings, and industries across Hyderabad.</p>
+    <a href="#contact" class="btn-primary">Get in Touch</a>
+  </div>
+
+  <div class="hero-card">
+    <div class="hero-card-img">Elevator project highlight</div>
+    <div class="hero-card-text">Recent installation completed in Balapur, Hyderabad. Smooth ride, elegant cabin, and full safety features delivered on time.</div>
+  </div>
+</section>
+
+<section id="about">
+  <h2 class="section-title">About Us</h2>
+  <p class="section-subtitle">Hyderabad-based elevator specialists focused on safe, durable solutions.</p>
+
+  <div class="two-col">
+    <div>
+      <p>Eminent Elevators is dedicated to delivering high-quality installation, modernization, and maintenance services. We provide long-lasting vertical transport solutions for residential, commercial, and industrial buildings.</p>
+      <p>We focus on honest work, reliable components, and fast support.</p>
+    </div>
+
+    <div class="card">
+      <h3>What We Focus On</h3>
+      <ul class="clean">
+        <li>Superior workmanship</li>
+        <li>Advanced elevator technology</li>
+        <li>Fast breakdown response</li>
+        <li>Customer-first attitude</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-subtitle">From new installations to maintenance & upgrades.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3>Elevator Installation</h3>
+      <p>Passenger, home, goods, and hospital elevators built for performance and safety.</p>
+    </div>
+    <div class="card">
+      <h3>Elevator Maintenance</h3>
+      <p>Monthly and annual AMC plans ensuring reliable lift operation.</p>
+    </div>
+    <div class="card">
+      <h3>Modernization</h3>
+      <p>Upgrade old lifts with panels, doors, machines, wiring, and cabin interiors.</p>
+    </div>
+  </div>
+</section>
+
+<section id="types">
+  <h2 class="section-title">Elevator Types We Install</h2>
+  <p class="section-subtitle">Customized for every requirement.</p>
+
+  <div class="pill-row">
+    <div class="pill">Passenger Elevators</div>
+    <div class="pill">Home Elevators</div>
+    <div class="pill">Goods Lifts</div>
+    <div class="pill">Hospital Elevators</div>
+    <div class="pill">MRL Elevators</div>
+    <div class="pill">Traction Elevators</div>
+    <div class="pill">Hydraulic Elevators</div>
+    <div class="pill">AMC Contracts</div>
+  </div>
+</section>
+
+<section id="why">
+  <h2 class="section-title">Why Choose Us</h2>
+  <p class="section-subtitle">Reliable, professional, and customer-focused.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <h3>Owner Supervision</h3>
+      <p>Every project personally monitored for quality.</p>
+    </div>
+    <div class="card">
+      <h3>Quality Components</h3>
+      <p>Durable, tested components for long-term reliability.</p>
+    </div>
+    <div class="card">
+      <h3>24/7 Support</h3>
+      <p>Quick response for breakdowns and emergencies.</p>
+    </div>
+    <div class="card">
+      <h3>Transparent Pricing</h3>
+      <p>No hidden charges — clear quotations every time.</p>
+    </div>
+  </div>
+</section>
+
+<div class="highlight-strip">
+  Need a lift, AMC, or modernization? Call or WhatsApp: <strong>8978625575</strong>
+</div>
+
+<section id="contact">
+  <h2 class="section-title">Contact Us</h2>
+  <p class="section-subtitle">Share your building details for the right lift solution.</p>
+
+  <div class="contact-grid">
+    <div>
+      <ul class="contact-list">
+        <li><span class="label">Company:</span> Eminent Elevators</li>
+        <li><span class="label">Phone:</span> 8978625575</li>
+        <li><span class="label">Email:</span> contact.eminentelevator@gmail.com</li>
+        <li><span class="label">Address:</span> CPNR Green City, Balapur, Hyderabad</li>
+      </ul>
+    </div>
+
+    <div class="contact-box">
+      <h3>Quick Enquiry</h3>
+      <p>Name, phone number, site location, lift requirement.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © <span id="year"></span> Eminent Elevators · Hyderabad · All Rights Reserved
+</footer>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
