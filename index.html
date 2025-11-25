@@ -4,219 +4,69 @@
   <meta charset="UTF-8" />
   <title>Eminent Elevators | Hyderabad</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- GOOGLE VERIFICATION -->
   <meta name="google-site-verification" content="hwHgTIPQcizmQlpfU0E2kjZuPr47N0BdJed6NP09GpI" />
-
   <style>
-    :root {
-      --gold: #d4af37;
-      --dark: #111111;
-      --light: #f7f4ec;
-      --text: #222222;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #ffffff;
-      color: var(--text);
-      line-height: 1.6;
-    }
-    a { color: inherit; text-decoration: none; }
+    :root { --gold:#d4af37; --dark:#111; --light:#f7f4ec; --text:#222; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#fff;color:var(--text);line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    header{background:var(--dark);color:#fff;padding:14px 8%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.08em;font-size:.95rem;text-transform:uppercase}
+    .logo-mark{width:34px;height:34px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:.75rem}
+    nav ul{list-style:none;display:flex;gap:20px;font-size:.9rem}
+    nav a{color:#f5f5f5;opacity:.8}
+    nav a:hover{opacity:1;color:var(--gold)}
+    .call-header{font-size:.9rem;color:var(--gold);font-weight:600}
+    section{padding:60px 8%;max-width:1100px;margin:0 auto}
+    .hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:center;background:radial-gradient(circle at top left,#fdf6df,#fff);padding:70px 0}
+    .hero h1{font-size:2.4rem;margin-bottom:10px;color:var(--dark)}
+    .hero h1 span{color:var(--gold)}
+    .hero p{max-width:520px;margin-bottom:20px}
+    .hero-tagline{font-weight:600;color:var(--gold);margin-bottom:12px}
+    .btn-primary{display:inline-block;background:var(--gold);color:#111;padding:10px 22px;border-radius:999px;font-weight:600;font-size:.95rem}
+    .hero-card{background:#181818;border-radius:22px;padding:18px;color:#f5f5f5;box-shadow:0 18px 40px rgba(0,0,0,.35)}
+    .hero-card-img{background:linear-gradient(135deg,#444,#111);height:220px;display:flex;align-items:center;justify-content:center;color:#bbb}
+    .hero-card-text{padding:16px 18px;font-size:.85rem}
+    h2.section-title{font-size:1.6rem;margin-bottom:12px;color:var(--dark)}
+    .section-subtitle{font-size:.96rem;color:#666;margin-bottom:26px}
+    .two-col{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px}
+    .card{border-radius:16px;border:1px solid #eee1b9;background:#fffdf5;padding:16px 18px}
+    .card h3{margin-bottom:6px}
+    ul.clean{list-style:none}
+    ul.clean li::before{content:"•";color:var(--gold);margin-right:6px}
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px}
+    .pill{border-radius:999px;border:1px solid rgba(0,0,0,.06);background:#faf7ea;padding:6px 12px;font-size:.84rem}
+    .highlight-strip{background:#111;color:#fff;text-align:center;padding:18px 8%;font-size:.95rem}
+    .contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px}
+    .contact-box{border-radius:18px;background:#111;color:#fff;padding:18px 20px}
+    footer{background:#000;color:#bbb;text-align:center;font-size:.8rem;padding:10px}
 
-    header {
-      background: var(--dark);
-      color: #ffffff;
-      padding: 14px 8%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      font-size: 0.95rem;
-      text-transform: uppercase;
-    }
-    .logo-mark {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      border: 2px solid var(--gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-      font-size: 0.9rem;
-    }
-    nav a {
-      color: #f5f5f5;
-      opacity: 0.8;
-    }
-    nav a:hover {
-      opacity: 1;
-      color: var(--gold);
-    }
-    .call-header {
-      font-size: 0.9rem;
-      color: var(--gold);
-      font-weight: 600;
+    /* Video section styles */
+    .video-section{display:grid;gap:18px;align-items:center}
+    .video-wrapper{max-width:100%;border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.18);background:#000}
+    video{width:100%;height:auto;display:block;background:#000}
+    .video-caption{font-size:.95rem;color:#444;margin-top:6px}
+
+    @media(max-width:900px){
+      header{flex-wrap:wrap;gap:10px}
+      nav{width:100%;margin-top:6px}
+      nav ul{justify-content:center;flex-wrap:wrap}
+      .hero,.two-col,.contact-grid{grid-template-columns:1fr}
+      .hero-card{margin-top:10px}
     }
 
-    section {
-      padding: 60px 8%;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 40px;
-      align-items: center;
-      background: radial-gradient(circle at top left, #fdf6df, #ffffff);
-      padding: 70px 0;
-    }
-    .hero h1 {
-      font-size: 2.4rem;
-      margin-bottom: 10px;
-      color: var(--dark);
-    }
-    .hero h1 span { color: var(--gold); }
-    .hero p { max-width: 520px; margin-bottom: 20px; }
-    .hero-tagline {
-      font-weight: 600;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-    .btn-primary {
-      display: inline-block;
-      background: var(--gold);
-      color: #111;
-      padding: 10px 22px;
-      border-radius: 999px;
-      font-weight: 600;
-      font-size: 0.95rem;
-    }
-
-    .hero-card {
-      background: #181818;
-      border-radius: 22px;
-      padding: 18px;
-      color: #f5f5f5;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-    }
-    .hero-card-img {
-      background: linear-gradient(135deg, #444, #111);
-      height: 220px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #bbb;
-    }
-    .hero-card-text {
-      padding: 16px 18px;
-      font-size: 0.85rem;
-    }
-
-    h2.section-title {
-      font-size: 1.6rem;
-      margin-bottom: 12px;
-      color: var(--dark);
-    }
-    .section-subtitle {
-      font-size: 0.96rem;
-      color: #666;
-      margin-bottom: 26px;
-    }
-
-    .two-col {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 32px;
-    }
-    .card {
-      border-radius: 16px;
-      border: 1px solid #eee1b9;
-      background: #fffdf5;
-      padding: 16px 18px;
-    }
-    .card h3 { margin-bottom: 6px; }
-
-    ul.clean { list-style: none; }
-    ul.clean li::before {
-      content: "•";
-      color: var(--gold);
-      margin-right: 6px;
-    }
-
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .pill {
-      border-radius: 999px;
-      border: 1px solid rgba(0,0,0,0.06);
-      background: #faf7ea;
-      padding: 6px 12px;
-      font-size: 0.84rem;
-    }
-
-    .highlight-strip {
-      background: #111;
-      color: #fff;
-      text-align: center;
-      padding: 18px 8%;
-      font-size: 0.95rem;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-      gap: 32px;
-    }
-    .contact-box {
-      border-radius: 18px;
-      background: #111;
-      color: #fff;
-      padding: 18px 20px;
-    }
-
-    footer {
-      background: #000;
-      color: #bbb;
-      text-align: center;
-      font-size: 0.8rem;
-      padding: 10px;
-    }
-
-    @media (max-width: 900px) {
-      header { flex-wrap: wrap; gap: 10px; }
-      nav { width: 100%; margin-top: 6px; }
-      nav ul { justify-content: center; flex-wrap: wrap; }
-      .hero, .two-col, .contact-grid { grid-template-columns: 1fr; }
+    @media(max-width:600px){
+      .hero h1{font-size:2rem}
+      section{padding:45px 6%}
+      header{padding:12px 6%}
     }
   </style>
 </head>
 
 <body>
+
 <header>
-  <div class="logo">
-    <div class="logo-mark">EG</div>
-    <div>Eminent Elevators</div>
-  </div>
+  <div class="logo"><div class="logo-mark">EG</div><div>Eminent Elevators</div></div>
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
@@ -270,17 +120,26 @@
   <p class="section-subtitle">From new installations to maintenance & upgrades.</p>
 
   <div class="card-grid">
-    <div class="card">
-      <h3>Elevator Installation</h3>
-      <p>Passenger, home, goods, and hospital elevators built for performance and safety.</p>
+    <div class="card"><h3>Elevator Installation</h3><p>Passenger, home, goods, and hospital elevators built for performance and safety.</p></div>
+    <div class="card"><h3>Elevator Maintenance</h3><p>Monthly and annual AMC plans ensuring reliable lift operation.</p></div>
+    <div class="card"><h3>Modernization</h3><p>Upgrade old lifts with panels, doors, machines, wiring, and cabin interiors.</p></div>
+  </div>
+</section>
+
+<!-- PROJECT VIDEO SECTION -->
+<section id="project-video">
+  <h2 class="section-title">Project Video</h2>
+  <p class="section-subtitle">Running work — On-site installation highlight</p>
+
+  <div class="video-section">
+    <div class="video-wrapper">
+      <video controls playsinline preload="metadata">
+        <source src="/mnt/data/VID20251122145839.mp4" type="video/mp4">
+      </video>
     </div>
-    <div class="card">
-      <h3>Elevator Maintenance</h3>
-      <p>Monthly and annual AMC plans ensuring reliable lift operation.</p>
-    </div>
-    <div class="card">
-      <h3>Modernization</h3>
-      <p>Upgrade old lifts with panels, doors, machines, wiring, and cabin interiors.</p>
+    <div class="video-caption">
+      On-site installation work — Balapur project.  
+      For site visits or queries, call/WhatsApp 8978625575.
     </div>
   </div>
 </section>
@@ -306,28 +165,14 @@
   <p class="section-subtitle">Reliable, professional, and customer-focused.</p>
 
   <div class="card-grid">
-    <div class="card">
-      <h3>Owner Supervision</h3>
-      <p>Every project personally monitored for quality.</p>
-    </div>
-    <div class="card">
-      <h3>Quality Components</h3>
-      <p>Durable, tested components for long-term reliability.</p>
-    </div>
-    <div class="card">
-      <h3>24/7 Support</h3>
-      <p>Quick response for breakdowns and emergencies.</p>
-    </div>
-    <div class="card">
-      <h3>Transparent Pricing</h3>
-      <p>No hidden charges — clear quotations every time.</p>
-    </div>
+    <div class="card"><h3>Owner Supervision</h3><p>Every project personally monitored for quality.</p></div>
+    <div class="card"><h3>Quality Components</h3><p>Durable, tested components for long-term reliability.</p></div>
+    <div class="card"><h3>24/7 Support</h3><p>Quick response for breakdowns and emergencies.</p></div>
+    <div class="card"><h3>Transparent Pricing</h3><p>No hidden charges — clear quotations every time.</p></div>
   </div>
 </section>
 
-<div class="highlight-strip">
-  Need a lift, AMC, or modernization? Call or WhatsApp: <strong>8978625575</strong>
-</div>
+<div class="highlight-strip">Need a lift, AMC, or modernization? Call or WhatsApp: <strong>8978625575</strong></div>
 
 <section id="contact">
   <h2 class="section-title">Contact Us</h2>
@@ -343,20 +188,13 @@
       </ul>
     </div>
 
-    <div class="contact-box">
-      <h3>Quick Enquiry</h3>
-      <p>Name, phone number, site location, lift requirement.</p>
-    </div>
+    <div class="contact-box"><h3>Quick Enquiry</h3><p>Name, phone number, site location, lift requirement.</p></div>
   </div>
 </section>
 
-<footer>
-  © <span id="year"></span> Eminent Elevators · Hyderabad · All Rights Reserved
-</footer>
+<footer>© <span id="year"></span> Eminent Elevators · Hyderabad · All Rights Reserved</footer>
 
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
