@@ -1,200 +1,245 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <title>Eminent Elevators | Hyderabad</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="google-site-verification" content="hwHgTIPQcizmQlpfU0E2kjZuPr47N0BdJed6NP09GpI" />
+
   <style>
-    :root { --gold:#d4af37; --dark:#111; --light:#f7f4ec; --text:#222; }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#fff;color:var(--text);line-height:1.6}
-    a{color:inherit;text-decoration:none}
-    header{background:var(--dark);color:#fff;padding:14px 8%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-    .logo{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.08em;font-size:.95rem;text-transform:uppercase}
-    .logo-mark{width:34px;height:34px;border-radius:50%;border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-size:.75rem}
-    nav ul{list-style:none;display:flex;gap:20px;font-size:.9rem}
-    nav a{color:#f5f5f5;opacity:.8}
-    nav a:hover{opacity:1;color:var(--gold)}
-    .call-header{font-size:.9rem;color:var(--gold);font-weight:600}
-    section{padding:60px 8%;max-width:1100px;margin:0 auto}
-    .hero{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:center;background:radial-gradient(circle at top left,#fdf6df,#fff);padding:70px 0}
-    .hero h1{font-size:2.4rem;margin-bottom:10px;color:var(--dark)}
-    .hero h1 span{color:var(--gold)}
-    .hero p{max-width:520px;margin-bottom:20px}
-    .hero-tagline{font-weight:600;color:var(--gold);margin-bottom:12px}
-    .btn-primary{display:inline-block;background:var(--gold);color:#111;padding:10px 22px;border-radius:999px;font-weight:600;font-size:.95rem}
-    .hero-card{background:#181818;border-radius:22px;padding:18px;color:#f5f5f5;box-shadow:0 18px 40px rgba(0,0,0,.35)}
-    .hero-card-img{background:linear-gradient(135deg,#444,#111);height:220px;display:flex;align-items:center;justify-content:center;color:#bbb}
-    .hero-card-text{padding:16px 18px;font-size:.85rem}
-    h2.section-title{font-size:1.6rem;margin-bottom:12px;color:var(--dark)}
-    .section-subtitle{font-size:.96rem;color:#666;margin-bottom:26px}
-    .two-col{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px}
-    .card{border-radius:16px;border:1px solid #eee1b9;background:#fffdf5;padding:16px 18px}
-    .card h3{margin-bottom:6px}
-    ul.clean{list-style:none}
-    ul.clean li::before{content:"•";color:var(--gold);margin-right:6px}
-    .pill-row{display:flex;flex-wrap:wrap;gap:10px}
-    .pill{border-radius:999px;border:1px solid rgba(0,0,0,.06);background:#faf7ea;padding:6px 12px;font-size:.84rem}
-    .highlight-strip{background:#111;color:#fff;text-align:center;padding:18px 8%;font-size:.95rem}
-    .contact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px}
-    .contact-box{border-radius:18px;background:#111;color:#fff;padding:18px 20px}
-    footer{background:#000;color:#bbb;text-align:center;font-size:.8rem;padding:10px}
-
-    /* Video section styles */
-    .video-section{display:grid;gap:18px;align-items:center}
-    .video-wrapper{max-width:100%;border-radius:12px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.18);background:#000}
-    video{width:100%;height:auto;display:block;background:#000}
-    .video-caption{font-size:.95rem;color:#444;margin-top:6px}
-
-    @media(max-width:900px){
-      header{flex-wrap:wrap;gap:10px}
-      nav{width:100%;margin-top:6px}
-      nav ul{justify-content:center;flex-wrap:wrap}
-      .hero,.two-col,.contact-grid{grid-template-columns:1fr}
-      .hero-card{margin-top:10px}
+    :root{
+      --gold: #d4af37;
+      --dark: #0f0f10;
+      --muted: #6b6b6b;
+      --card: #ffffff;
+      --bg: #fcfbfa;
+      --accent-bg: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(0,0,0,0));
+      --radius: 14px;
+      --maxw: 1100px;
+      --shadow: 0 18px 40px rgba(17,17,17,0.12);
     }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:#111;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    header{background:var(--dark);color:#fff;padding:14px 6%;position:sticky;top:0;z-index:80;display:flex;align-items:center;justify-content:space-between}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:700;text-transform:uppercase}
+    .logo-mark{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--gold);color:var(--gold);font-weight:700}
+    nav ul{display:flex;gap:18px;list-style:none}
+    nav a{color:#eee;opacity:.9;font-size:0.95rem}
+    nav a:hover{color:var(--gold)}
+    .call-header{color:var(--gold);font-weight:700}
 
-    @media(max-width:600px){
-      .hero h1{font-size:2rem}
-      section{padding:45px 6%}
-      header{padding:12px 6%}
+    main{max-width:var(--maxw);margin:28px auto;padding:0 6%}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;align-items:center;padding:48px 0}
+    .hero h1{font-size:2.4rem;margin-bottom:8px}
+    .hero h1 span{color:var(--gold)}
+    .hero p{color:#333;max-width:620px}
+    .btn-primary{display:inline-block;background:var(--gold);color:#111;padding:10px 20px;border-radius:999px;font-weight:700;margin-top:12px}
+    .hero-card{background:#0f0f10;color:#fff;border-radius:18px;padding:18px;box-shadow:var(--shadow)}
+
+    /* RECENT PROJECT - PREMIUM STYLE */
+    .recent-project{
+      margin-top:18px;padding:28px;border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(212,175,55,0.06) 0%, rgba(255,255,255,0.8) 100%);
+      border: 1px solid rgba(212,175,55,0.12);
+      box-shadow: 0 14px 30px rgba(17,17,17,0.06);
+    }
+    .recent-grid{display:grid;grid-template-columns: 1fr 360px;gap:20px;align-items:start}
+    .rp-badge{display:inline-block;background:rgba(212,175,55,0.12);color:var(--gold);padding:6px 12px;border-radius:999px;font-weight:700;margin-bottom:12px;border:1px solid rgba(212,175,55,0.18)}
+    .rp-title{font-size:1.25rem;font-weight:700;color:#111;margin-bottom:8px}
+    .rp-desc{color:#222;margin-bottom:12px}
+    .rp-list{margin-left:16px;margin-bottom:12px;color:#333}
+    .rp-meta{font-size:0.94rem;color:var(--muted);margin-top:8px}
+    .rp-cta{display:inline-block;margin-top:12px;background:#111;color:var(--gold);padding:10px 14px;border-radius:10px;font-weight:700}
+
+    /* right column preview */
+    .rp-preview{background:#fff;border-radius:12px;padding:8px;border:1px solid rgba(0,0,0,0.04)}
+    .rp-img{height:220px;border-radius:8px;background:linear-gradient(135deg,#f0e9e0,#efe8df);display:flex;align-items:center;justify-content:center;color:#666;font-weight:700}
+    .rp-key{display:flex;flex-direction:column;gap:6px;margin-top:10px}
+    .rp-key .k{font-weight:700;color:#111}
+    .rp-key .v{color:var(--muted);font-size:0.92rem}
+
+    /* Video section */
+    .video-section{margin-top:26px}
+    .video-wrapper{background:#000;border-radius:12px;overflow:hidden;box-shadow:0 14px 36px rgba(0,0,0,0.18)}
+    video{width:100%;height:auto;display:block}
+
+    /* HIGHLIGHTS */
+    #highlights{margin-top:30px;padding:28px;border-radius:12px;background:#fff;box-shadow:0 10px 26px rgba(0,0,0,0.04);border-left:4px solid rgba(212,175,55,0.9)}
+    .highlight-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:14px}
+    .highlight-card{background:linear-gradient(180deg,#fff,#fff);padding:16px;border-radius:12px;box-shadow:0 8px 18px rgba(17,17,17,0.04)}
+    .highlight-card h3{color:#111;margin-bottom:8px}
+    .highlight-card p{color:#444;font-size:0.95rem}
+
+    /* types / contact / footer */
+    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+    .pill{background:linear-gradient(180deg,#f9f5e9,#fbf8f4);padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.04)}
+    footer{margin-top:40px;padding:18px 6%;text-align:center;color:#777;background:transparent}
+
+    /* responsiveness */
+    @media(max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .recent-grid{grid-template-columns:1fr}
+      .rp-preview{order:-1}
     }
   </style>
 </head>
-
 <body>
 
 <header>
-  <div class="logo"><div class="logo-mark">EG</div><div>Eminent Elevators</div></div>
+  <div class="logo">
+    <div class="logo-mark">EG</div>
+    <div>Eminent Elevators</div>
+  </div>
+
   <nav>
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#types">Types</a></li>
-      <li><a href="#why">Why Us</a></li>
+      <li><a href="#project-video">Projects</a></li>
+      <li><a href="#highlights">Highlights</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
+
   <div class="call-header">📞 8978625575</div>
 </header>
 
-<section class="hero">
-  <div>
-    <div class="hero-tagline">Reliable Solutions for Vertical Transportation</div>
-    <h1><span>Eminent</span> Elevators</h1>
-    <p>Quality lifts, superior service, and trusted performance for homes, apartments, commercial buildings, and industries across Hyderabad.</p>
-    <a href="#contact" class="btn-primary">Get in Touch</a>
-  </div>
-
-  <div class="hero-card">
-    <div class="hero-card-img">Elevator project highlight</div>
-    <div class="hero-card-text">Recent installation completed in Balapur, Hyderabad. Smooth ride, elegant cabin, and full safety features delivered on time.</div>
-  </div>
-</section>
-
-<section id="about">
-  <h2 class="section-title">About Us</h2>
-  <p class="section-subtitle">Hyderabad-based elevator specialists focused on safe, durable solutions.</p>
-
-  <div class="two-col">
+<main>
+  <!-- HERO -->
+  <section class="hero" aria-label="hero">
     <div>
-      <p>Eminent Elevators is dedicated to delivering high-quality installation, modernization, and maintenance services. We provide long-lasting vertical transport solutions for residential, commercial, and industrial buildings.</p>
-      <p>We focus on honest work, reliable components, and fast support.</p>
+      <div class="hero-tagline">Reliable Solutions for Vertical Transportation</div>
+      <h1><span>Eminent</span> Elevators</h1>
+      <p>Premium lift installation, service, and modernization for residential and commercial buildings in Hyderabad. Owner-supervised projects, reliable components, and fast service.</p>
+      <a class="btn-primary" href="#contact">Get in Touch</a>
     </div>
 
-    <div class="card">
-      <h3>What We Focus On</h3>
-      <ul class="clean">
-        <li>Superior workmanship</li>
-        <li>Advanced elevator technology</li>
-        <li>Fast breakdown response</li>
-        <li>Customer-first attitude</li>
-      </ul>
+    <div class="hero-card" aria-hidden="false">
+      <div class="hero-card-img">Eminent Project</div>
+      <div style="padding-top:12px;color:#ddd;">
+        Recent on-site installations with precise leveling and premium cabin finishes delivered on time.
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="services">
-  <h2 class="section-title">Our Services</h2>
-  <p class="section-subtitle">From new installations to maintenance & upgrades.</p>
+  <!-- RECENT PROJECT - AL-BAIK (Premium Gold Card) -->
+  <section class="recent-project" id="recent-project" aria-label="Recent project - Al-Baik">
+    <div class="recent-grid">
+      <div>
+        <div class="rp-badge">Running Project</div>
+        <div class="rp-title">🍽 Kitchen Dumbwaiter Lift – Al-Baik</div>
+        <div class="rp-desc">We completed a food-grade dumbwaiter installation at Al-Baik to improve kitchen-to-service efficiency and hygiene. Designed for heavy-duty restaurant use and continuous operation.</div>
 
-  <div class="card-grid">
-    <div class="card"><h3>Elevator Installation</h3><p>Passenger, home, goods, and hospital elevators built for performance and safety.</p></div>
-    <div class="card"><h3>Elevator Maintenance</h3><p>Monthly and annual AMC plans ensuring reliable lift operation.</p></div>
-    <div class="card"><h3>Modernization</h3><p>Upgrade old lifts with panels, doors, machines, wiring, and cabin interiors.</p></div>
-  </div>
-</section>
+        <ul class="rp-list">
+          <li>Food-grade stainless-steel cabin (SUS 304)</li>
+          <li>Smooth & silent geared/gearless drive (as specified)</li>
+          <li>Auto door interlock and fail-safe features</li>
+          <li>Space-saving compact shaft design</li>
+          <li>Soft start/stop controller with overload protection</li>
+          <li>Hygienic finish suitable for food service environments</li>
+        </ul>
 
-<!-- PROJECT VIDEO SECTION -->
-<section id="project-video">
-  <h2 class="section-title">Project Video</h2>
-  <p class="section-subtitle">Running work — On-site installation highlight</p>
+        <div class="rp-meta"><strong>Location:</strong> Al-Baik Restaurant &nbsp; • &nbsp; <strong>Status:</strong> Running Project – Successfully Completed</div>
 
-  <div class="video-section">
+        <a class="rp-cta" href="#contact">Request Site Visit</a>
+      </div>
+
+      <div class="rp-preview" aria-hidden="false">
+        <div class="rp-img">AL-BAIK</div>
+
+        <div class="rp-key" style="padding:10px 6px">
+          <div class="k">Project Type</div><div class="v">Kitchen Dumbwaiter</div>
+          <div class="k" style="margin-top:8px">Installed</div><div class="v">Nov 2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECT VIDEO -->
+  <section id="project-video" class="video-section" aria-label="Project video">
+    <h2 style="margin-bottom:6px">Project Video</h2>
+    <p style="color:var(--muted);margin-bottom:14px">On-site installation highlight</p>
+
     <div class="video-wrapper">
       <video controls playsinline preload="metadata">
         <source src="VID-20250622-WA0074.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
       </video>
     </div>
-    <div class="video-caption">
-      On-site installation work — Kompally project.  
-      For site visits or queries, call/WhatsApp 8978625575.
+
+    <div style="color:var(--muted);margin-top:10px">Live installation footage — Balapur Project. For site visits or bookings, call/WhatsApp 8978625575.</div>
+  </section>
+
+  <!-- HIGHLIGHTS -->
+  <section id="highlights">
+    <h2>Elevator Project Highlights</h2>
+    <p style="color:var(--muted)">Quality, safety, and smooth performance in every installation.</p>
+
+    <div class="highlight-list">
+      <div class="highlight-card">
+        <h3>Smooth & Silent Gearless Operation</h3>
+        <p>Gearless drive for vibration-free operation and premium ride comfort.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>Premium SS Cabin Finish</h3>
+        <p>Food-grade stainless steel cabin options for hygienic environments.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>High-Strength Shaft Work</h3>
+        <p>Reinforced guide rails and precision alignment for lasting safety.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>Accurate Leveling</h3>
+        <p>Soft start/stop and microprocessor-leveling for perfect landings.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>Energy Efficient Systems</h3>
+        <p>Optimized drives reduce consumption and operating costs.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>Advanced Safety Features</h3>
+        <p>Includes ARD, door interlocks, overspeed protection and emergency stop.</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="types">
-  <h2 class="section-title">Elevator Types We Install</h2>
-  <p class="section-subtitle">Customized for every requirement.</p>
-
-  <div class="pill-row">
-    <div class="pill">Passenger Elevators</div>
-    <div class="pill">Home Elevators</div>
-    <div class="pill">Goods Lifts</div>
-    <div class="pill">Hospital Elevators</div>
-    <div class="pill">MRL Elevators</div>
-    <div class="pill">Traction Elevators</div>
-    <div class="pill">Hydraulic Elevators</div>
-    <div class="pill">AMC Contracts</div>
-  </div>
-</section>
-
-<section id="why">
-  <h2 class="section-title">Why Choose Us</h2>
-  <p class="section-subtitle">Reliable, professional, and customer-focused.</p>
-
-  <div class="card-grid">
-    <div class="card"><h3>Owner Supervision</h3><p>Every project personally monitored for quality.</p></div>
-    <div class="card"><h3>Quality Components</h3><p>Durable, tested components for long-term reliability.</p></div>
-    <div class="card"><h3>24/7 Support</h3><p>Quick response for breakdowns and emergencies.</p></div>
-    <div class="card"><h3>Transparent Pricing</h3><p>No hidden charges — clear quotations every time.</p></div>
-  </div>
-</section>
-
-<div class="highlight-strip">Need a lift, AMC, or modernization? Call or WhatsApp: <strong>8978625575</strong></div>
-
-<section id="contact">
-  <h2 class="section-title">Contact Us</h2>
-  <p class="section-subtitle">Share your building details for the right lift solution.</p>
-
-  <div class="contact-grid">
-    <div>
-      <ul class="contact-list">
-        <li><span class="label">Company:</span> Eminent Elevators</li>
-        <li><span class="label">Phone:</span> 8978625575</li>
-        <li><span class="label">Email:</span> contact.eminentelevator@gmail.com</li>
-        <li><span class="label">Address:</span> CPNR Green City, Balapur, Hyderabad</li>
-      </ul>
+  <!-- TYPES -->
+  <section id="types">
+    <h2>Elevator Types</h2>
+    <div class="pill-row" style="margin-top:8px">
+      <div class="pill">Passenger Elevator</div>
+      <div class="pill">Home Lift</div>
+      <div class="pill">Goods Lift</div>
+      <div class="pill">Hospital Elevator</div>
+      <div class="pill">MRL Elevator</div>
+      <div class="pill">Traction</div>
+      <div class="pill">Hydraulic</div>
+      <div class="pill">AMC Support</div>
     </div>
+  </section>
 
-    <div class="contact-box"><h3>Quick Enquiry</h3><p>Name, phone number, site location, lift requirement.</p></div>
-  </div>
-</section>
+  <!-- CONTACT -->
+  <section id="contact" style="padding-top:26px;padding-bottom:40px">
+    <h2>Contact Us</h2>
+    <p style="color:var(--muted)">Share your site details and we’ll suggest the right lift solution.</p>
+    <p><strong>Phone:</strong> 8978625575</p>
+    <p><strong>Email:</strong> contact.eminentelevator@gmail.com</p>
+    <p><strong>Address:</strong> CPNR Green City, Balapur, Hyderabad</p>
+  </section>
 
-<footer>© <span id="year"></span> Eminent Elevators · Hyderabad · All Rights Reserved</footer>
+</main>
 
-<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+<footer>
+  © <span id="year"></span> Eminent Elevators · Hyderabad
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
