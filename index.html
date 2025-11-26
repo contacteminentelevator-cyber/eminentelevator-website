@@ -40,27 +40,45 @@
     .btn-primary{display:inline-block;background:var(--gold);color:#111;padding:10px 20px;border-radius:999px;font-weight:700;margin-top:12px}
     .hero-card{background:#0f0f10;color:#fff;border-radius:18px;padding:18px;box-shadow:var(--shadow)}
 
-    /* RECENT PROJECT - PREMIUM STYLE */
-    .recent-project{
-      margin-top:18px;padding:28px;border-radius:var(--radius);
-      background: linear-gradient(180deg, rgba(212,175,55,0.06) 0%, rgba(255,255,255,0.8) 100%);
-      border: 1px solid rgba(212,175,55,0.12);
-      box-shadow: 0 14px 30px rgba(17,17,17,0.06);
-    }
-    .recent-grid{display:grid;grid-template-columns: 1fr 360px;gap:20px;align-items:start}
-    .rp-badge{display:inline-block;background:rgba(212,175,55,0.12);color:var(--gold);padding:6px 12px;border-radius:999px;font-weight:700;margin-bottom:12px;border:1px solid rgba(212,175,55,0.18)}
-    .rp-title{font-size:1.25rem;font-weight:700;color:#111;margin-bottom:8px}
-    .rp-desc{color:#222;margin-bottom:12px}
-    .rp-list{margin-left:16px;margin-bottom:12px;color:#333}
-    .rp-meta{font-size:0.94rem;color:var(--muted);margin-top:8px}
-    .rp-cta{display:inline-block;margin-top:12px;background:#111;color:var(--gold);padding:10px 14px;border-radius:10px;font-weight:700}
+    <!-- RECENT PROJECT - AL-BAIK (Compact Premium) -->
+<section class="recent-project" id="recent-project" aria-label="Recent project - Al-Baik">
+  <div class="recent-grid">
+    <div>
+      <div class="rp-badge">Running Project</div>
+      <div class="rp-title">🍽 Kitchen Dumbwaiter Lift – Al-Baik</div>
 
-    /* right column preview */
-    .rp-preview{background:#fff;border-radius:12px;padding:8px;border:1px solid rgba(0,0,0,0.04)}
-    .rp-img{height:220px;border-radius:8px;background:linear-gradient(135deg,#f0e9e0,#efe8df);display:flex;align-items:center;justify-content:center;color:#666;font-weight:700}
-    .rp-key{display:flex;flex-direction:column;gap:6px;margin-top:10px}
-    .rp-key .k{font-weight:700;color:#111}
-    .rp-key .v{color:var(--muted);font-size:0.92rem}
+      <div class="rp-desc">
+        Food-grade dumbwaiter installed at Al-Baik for fast, hygienic, and reliable kitchen-to-service deliveries. Engineered for continuous restaurant use.
+      </div>
+
+      <ul class="rp-list">
+        <li>Stainless-steel food-grade cabin (SUS 304)</li>
+        <li>Smooth & quiet drive with soft start/stop</li>
+        <li>Auto door interlock & safety features</li>
+        <li>Compact shaft for space-constrained kitchens</li>
+        <li>Overload protection & easy maintenance access</li>
+      </ul>
+
+      <div class="rp-meta"><strong>Location:</strong> Al-Baik &nbsp; • &nbsp; <strong>Status:</strong> Running Project — Completed</div>
+
+      <a class="rp-cta" href="#contact">Request Site Visit</a>
+    </div>
+
+    <div class="rp-preview" aria-hidden="false">
+      <!-- Replace "albaik.jpg" with your real photo filename if you upload one -->
+      <div class="rp-img">
+        AL-BAIK
+      </div>
+
+      <div class="rp-key" style="padding-left:2px">
+        <div style="font-weight:700">Project Type</div>
+        <div style="color:#666">Kitchen Dumbwaiter</div>
+        <div style="margin-top:8px;font-weight:700">Installed</div>
+        <div style="color:#666">Nov 2025</div>
+      </div>
+    </div>
+  </div>
+</section>
 
     /* Video section */
     .video-section{margin-top:26px}
