@@ -1,79 +1,70 @@
-    <header>
-  <div class="header-left">
-    <div class="logo">
-      <img src="eminent.logo.png" alt="Eminent Elevators Logo" 
-           style="width:48px;height:48px;border-radius:50%;object-fit:cover;">
-      <div>Eminent Elevators</div>
-    </div>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Eminent Elevators | Hyderabad</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="google-site-verification" content="hwHgTIPQcizmQlpfU0E2kjZuPr47N0BdJed6NP09GpI" />
 
-  <div style="display:flex;align-items:center;gap:12px">
-    <div class="call-header">📞 8978625575</div>
-
-    <select id="themeSelector" class="theme-select" aria-label="Theme selector">
-      <option value="gold" selected>Gold</option>
-      <option value="teal">Teal</option>
-      <option value="dark">Dark</option>
-      <option value="minimal">Minimal</option>
-    </select>
-  </div>
-</header>
   <style>
-    /* -----------------------------
-       Theme variables (4 presets available)
-       You can change theme with the selector in header,
-       or permanently edit the values in :root-default below.
-       ----------------------------- */
-
-    /* Default theme (Gold) */
+    /* ========== THEME VARIABLES (default: Gold) ========== */
     :root {
-      --brand-1: #d4af37;   /* gold accent */
-      --bg: #fcfbfa;
-      --card: #ffffff;
-      --dark: #0f0f10;
-      --muted: #6b6b6b;
+      --brand-1: #d4af37;   /* accent color */
+      --bg: #fcfbfa;        /* page bg */
+      --card: #ffffff;      /* card bg */
+      --dark: #0f0f10;      /* header dark text bg */
+      --muted: #6b6b6b;     /* muted text */
       --accent-soft: rgba(212,175,55,0.08);
       --radius: 12px;
       --maxw: 1100px;
     }
 
-    /* --- Theme presets (you can use these values to permanently set a theme) ---
-      Teal preset:
-        --brand-1: #0fb3a6; --bg: #f7fffd; --accent-soft: rgba(15,179,166,0.08)
-      Dark preset:
-        --brand-1: #d4af37; --bg: #0b0b0b; --card: #111; --dark: #fff; --accent-soft: rgba(212,175,55,0.06)
-      Minimal preset:
-        --brand-1: #1f2937; --bg: #ffffff; --card: #ffffff; --accent-soft: rgba(31,41,55,0.04)
-    ----------------------------------------------------------------- */
-
+    /* reset */
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--dark);line-height:1.6}
+    html,body{height:100%}
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--dark);line-height:1.6;-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
-    header{background:var(--dark);color:var(--card);padding:14px 6%;position:sticky;top:0;z-index:80;display:flex;align-items:center;justify-content:space-between;gap:18px}
+
+    /* HEADER */
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 6%;
+      position:sticky;
+      top:0;
+      z-index:120;
+      background:var(--dark);
+      color:var(--card);
+      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    }
     .header-left{display:flex;align-items:center;gap:14px}
-    .logo{display:flex;align-items:center;gap:12px;font-weight:700;text-transform:uppercase}
-    .logo-mark{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2px solid var(--brand-1);color:var(--brand-1);font-weight:700;background:transparent}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:700;text-transform:uppercase;color:var(--card)}
+    .logo img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--brand-1);background:#fff}
     nav ul{display:flex;gap:18px;list-style:none}
     nav a{color:rgba(255,255,255,0.95);font-size:.95rem}
     .call-header{color:var(--brand-1);font-weight:700}
 
-    /* theme selector */
-    .theme-select { background:transparent;border:1px solid rgba(255,255,255,0.08);color:#fff;padding:6px 8px;border-radius:8px;font-weight:700 }
-    main{max-width:var(--maxw);margin:18px auto;padding:0 6%}
+    .theme-select {
+      background:transparent;border:1px solid rgba(255,255,255,0.08);color:#fff;padding:6px 8px;border-radius:8px;font-weight:700;
+    }
 
-    /* HERO */
-    .hero{display:grid;grid-template-columns:1.3fr 1fr;gap:26px;align-items:center;padding:36px 0}
+    /* LAYOUT */
+    main{max-width:var(--maxw);margin:20px auto;padding:0 6%}
+
+/* HERO */
+    .hero{display:grid;grid-template-columns:1.3fr 1fr;gap:26px;align-items:center;padding:34px 0}
     .hero h1{font-size:2.4rem;margin-bottom:8px}
     .hero h1 span{color:var(--brand-1)}
-    .hero p{color:#333;max-width:620px}
+    .hero p{color:#333;max-width:640px}
     .btn-primary{display:inline-block;background:var(--brand-1);color:#111;padding:10px 20px;border-radius:999px;font-weight:700;margin-top:12px}
 
     .hero-card{background:var(--dark);color:var(--card);border-radius:14px;padding:16px;box-shadow:0 18px 36px rgba(0,0,0,0.12)}
     .hero-card .muted{color:var(--muted);font-size:.95rem}
 
-    /* RECENT PROJECT - compact */
-    .recent-project{margin-top:10px;padding:14px;border-radius:var(--radius);
-      background: linear-gradient(180deg,var(--accent-soft),rgba(255,255,255,0.92));
+/* RECENT PROJECT - compact premium */
+    .recent-project{margin-top:14px;padding:16px;border-radius:var(--radius);
+      background: linear-gradient(180deg,var(--accent-soft),rgba(255,255,255,0.94));
       border:1px solid rgba(0,0,0,0.04);box-shadow:0 10px 22px rgba(0,0,0,0.06)}
     .recent-grid{display:grid;grid-template-columns:1fr;gap:12px;align-items:start}
     .rp-badge{display:inline-block;background:rgba(0,0,0,0.04);color:var(--brand-1);padding:6px 10px;border-radius:999px;font-weight:800}
@@ -86,29 +77,29 @@
     .rp-img{width:120px;height:88px;border-radius:10px;overflow:hidden;background:#efe7dc;display:flex;align-items:center;justify-content:center;color:#666;font-weight:700;font-size:.95rem;border:1px solid rgba(0,0,0,0.04);flex-shrink:0}
     .rp-key{font-size:.92rem;color:#444}
 
-    /* small video wrapper in recent project */
+/* small video wrapper in recent project */
     .rp-video { margin-top:12px; border-radius:10px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.12) }
     .rp-video video{width:100%;height:auto;display:block}
 
-    /* main project video */
+/* main project video */
     .video-section{margin-top:16px}
     .video-wrapper{background:#000;border-radius:12px;overflow:hidden;box-shadow:0 14px 36px rgba(0,0,0,0.18)}
     video{width:100%;height:auto;display:block}
 
-    /* HIGHLIGHTS */
+/* HIGHLIGHTS */
     #highlights{margin-top:18px;padding:18px;border-radius:12px;background:var(--card);box-shadow:0 10px 26px rgba(0,0,0,0.04);border-left:4px solid var(--brand-1)}
     .highlight-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
     .highlight-card{background:linear-gradient(180deg,#fff,#fff);padding:12px;border-radius:8px;box-shadow:0 8px 18px rgba(17,17,17,0.04)}
     .highlight-card h3{color:var(--dark);margin-bottom:6px}
     .highlight-card p{color:#444;font-size:.95rem}
 
-    /* types & contact */
+/* types & contact */
     .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
     .pill{background:linear-gradient(180deg,#f9f5e9,#fbf8f4);padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.04)}
 
     footer{margin-top:26px;padding:18px 6%;text-align:center;color:var(--muted)}
 
-    /* responsive */
+/* responsive */
     @media(min-width:900px){
       .recent-grid{grid-template-columns:1fr 360px;gap:18px}
       .rp-img{width:100%;height:220px;border-radius:8px}
@@ -116,30 +107,34 @@
     }
     @media(max-width:900px){
       .hero{grid-template-columns:1fr}
-      header{padding:12px}
       nav{display:none}
+      header{padding:10px 4%}
     }
+
   </style>
 </head>
 <body>
 
 <header>
   <div class="header-left">
-    <div class="logo">
-      <div class="logo-mark">EG</div>
-      <div>Eminent Elevators</div>
+    <div class="logo" aria-label="Eminent Elevators logo and name">
+      <!-- Logo file: eminent.logo.png (must be uploaded into repo root) -->
+      <img src="eminent.logo.png" alt="Eminent Elevators Logo">
+      <div style="line-height:1">
+        <div style="font-weight:800">Eminent</div>
+        <div style="font-size:0.84rem;color:var(--muted);margin-top:0">Elevators</div>
+      </div>
     </div>
   </div>
 
   <div style="display:flex;align-items:center;gap:12px">
     <div class="call-header">📞 8978625575</div>
 
-    <!-- Theme selector -->
     <select id="themeSelector" class="theme-select" aria-label="Theme selector">
       <option value="gold" selected>Gold</option>
       <option value="teal">Teal</option>
       <option value="dark">Dark</option>
-      <option value="minimal">Minimal</option>
+      <option value="minimal">Multicolour<l</option>
     </select>
   </div>
 </header>
@@ -184,7 +179,7 @@
         <!-- AL-BAIK video included here -->
         <div class="rp-video" aria-hidden="false">
           <video controls playsinline preload="metadata">
-            <source src="VID-20251127-WA0012.mp4" type="video/mp4">
+            <source src="VID-20251122145839.mp4" type="video/mp4">
             Your browser does not support HTML5 video.
           </video>
         </div>
@@ -192,6 +187,7 @@
 
       <div class="rp-preview" aria-hidden="false">
         <div class="rp-img">AL-BAIK</div>
+
         <div class="rp-key" style="padding-left:6px">
           <div style="font-weight:700">Project Type</div>
           <div style="color:#666">Kitchen Dumbwaiter</div>
@@ -319,7 +315,7 @@
     }
   });
 
-  // allow the theme selector to remember last choice (localStorage)
+  // remember last selected theme
   const saved = localStorage.getItem('eminent_theme');
   if (saved) {
     themeSelector.value = saved;
