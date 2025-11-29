@@ -1,398 +1,175 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Eminent Elevators — BuildPress-style Modernized</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Eminent Elevators</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- Temporary embedded EE logo (Base64 PNG) -->
+<link rel="icon" type="image/png" href="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAclBMVEX///8AAADt7e3p6emWlpb39/fT09O3t7eOjo6FhYWJiYmlpaXo6Ojm5ubY2Njv7++ioqJ5eXkpKSkbGxvPz898fHy/v7+UlJRwcHB2dnaRkZG9vb3BwcG+vr7j4+OqqqrQ0NDV1dW5ubl/f3+NjY1aWlpLS0uYmJhJSUljY2NaWlqvprBQAAAFtklEQVR4nO2c21aiMBRAAZsEBqJhG2Z7//9wWJGqGBE77bTzu3RPEmTnAqsKLKnOX9xgg7omiUkqTssszczP84HxpOrF3908ANL5SbSg0AlZBfE/iHqjDkHfgh6U8B6GNxH4o9AHIY3Efjj0AchiMR78QegHEYiIfwR6AcRiIh/BDoBxGIiH8EegHEYiIfwQ6AcRiIh/BToBxGIiH8EOgHEYiIfwQ6Acxm6jyA1F1Yy7VYyN1bhuRUyEodjZHvPVD6mMq4Cjaqc0EZkp6R+I2kFjzSsb4ydQrySx6Q+I2kFjzSsb4ybQrkox6Q+I3kFjzSsb4ybQrySx6Q+I2kFjzSsb4yaQr+DxqLSKn0oU5YruLucYLSh+AxpRqJv0kUZYruLt8ole9x2EvU3kI05U2YruLt8olU8x2EvU3kI05U2YruLt8olU8x2EvU3kI05X3pZ3yc9LuRzJBvmRJXF3E5ZkP2URxhdyOWZD9lEcYXcjhmQ/ZRHGF3I4ZkP2URxhdyKF/1bxDgnAh35u9JWXYZ2Y3EZFlGmZucRVFlWmZucRVFlWmZucRVFlWmZucRVFlWmZucRVFlWmZucRVFlWmZu8RFflfGBDnmyuvM4RsWY+1IQ329VJ7uTRd/H2hruHsqffr7fX7+4j6o/fm/956fsuAQDvHP7P4g8vhYeoFHqBR6gUeoFHqBR6gUeoFHqBR6gUeoFF/AQYV26Deq6dSAAAAAElFTkSuQmCC">
 
-  <style>
-    /* ============ Theme tokens ============ */
-    :root{
-      --accent: #f2b705;      /* bright yellow */
-      --accent-2: #d99c03;    /* darker yellow */
-      --dark-900: #2b2b2b;    /* header dark */
-      --dark-700: #4a4a4a;
-      --muted: #7f7f7f;
-      --white: #ffffff;
-      --wood: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=4f2d5a4b0b9a8dfc4de4a7f8d3ed6b74'); /* background wood image — change if needed */
-      --container: 1180px;
-      --radius: 10px;
-      --shadow-lg: 0 12px 30px rgba(0,0,0,0.12);
-    }
+<style>
+/* ===== GLOBAL ===== */
+:root{
+  --yellow:#f2b705;
+  --yellow-dark:#d99c03;
+  --dark:#2b2b2b;
+  --muted:#7a7a7a;
+  --white:#fff;
+  --light-bg:#f6f6f6;
+}
+body{margin:0;font-family:Arial, sans-serif;background:var(--light-bg);color:var(--dark)}
+a{text-decoration:none;color:inherit}
+.container{max-width:1180px;margin:auto;padding:0 14px}
 
-    /* ============ Reset & base ============ */
-    *{box-sizing:border-box}
-    body{margin:0;font-family:"Roboto",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:#f6f6f6;color:var(--dark-900);-webkit-font-smoothing:antialiased}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--container);margin:0 auto;padding:0 18px}
+/* ===== TOPBAR ===== */
+.topbar{background:#333;color:#fff;padding:8px 0;font-size:13px}
+.top-wrap{display:flex;justify-content:space-between;flex-wrap:wrap}
 
-    /* ============ Top info bar ============ */
-    .topbar{background:#3b3b3b;color:#fff;font-size:13px}
-    .topbar .container{display:flex;align-items:center;justify-content:space-between;height:44px}
-    .topbar .left{display:flex;gap:20px;align-items:center}
-    .topbar i{opacity:.95}
-    .topbar .right{opacity:.95;font-size:13px}
+/* ===== HEADER ===== */
+.header{background:#fff;padding:12px 0;box-shadow:0 3px 10px rgba(0,0,0,0.08)}
+.header-wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-text{font-size:22px;font-weight:700}
+.yellow{color:var(--yellow)}
+.nav ul{list-style:none;display:flex;gap:20px;margin:0;padding:0}
+.nav a{font-weight:600;color:#222}
+.btn-primary{background:var(--yellow);padding:8px 16px;border-radius:8px;font-weight:700}
+.btn-ghost{border:1px solid #ccc;padding:8px 16px;border-radius:8px}
 
-    /* ============ Header / boxed nav ============ */
-    header{background:var(--white);box-shadow:0 2px 8px rgba(12,12,12,0.05);position:sticky;top:0;z-index:60}
-    .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:90px}
-    .brand{display:flex;align-items:center;gap:14px}
-    .logo{display:flex;align-items:center;gap:10px}
-    .logo .mark{background:var(--dark-900);color:var(--white);padding:10px 12px;border-radius:6px;font-weight:800;font-family:'Montserrat',sans-serif}
-    .logo .text{font-weight:700;font-family:'Montserrat',sans-serif;color:var(--dark-900)}
-    nav{flex:1;margin-left:40px}
-    nav .menu{display:flex;justify-content:center;gap:28px;list-style:none;margin:0;padding:0;align-items:center}
-    nav .menu li{font-weight:600;color:var(--dark-900);font-size:15px}
-    .header-actions{display:flex;gap:10px;align-items:center}
-    .btn-ghost{padding:9px 14px;border-radius:8px;border:1px solid rgba(43,43,43,0.06);background:#fff;font-weight:600}
-    .btn-primary{background:linear-gradient(180deg,var(--accent),var(--accent-2));padding:10px 16px;border-radius:8px;font-weight:800;color:#111;box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+/* ===== HERO ===== */
+.hero{background:#000 url('gallery/img11.jpg') center/cover no-repeat;padding:80px 0;position:relative}
+.hero-overlay{background:rgba(0,0,0,0.55);position:absolute;top:0;left:0;right:0;bottom:0}
+.hero-inner{position:relative;color:#fff}
+.hero-box{background:rgba(0,0,0,0.7);padding:24px;border-radius:10px;max-width:500px}
+.hero-box h3{color:var(--yellow);margin-bottom:8px;font-size:14px}
+.hero-box h1{font-size:30px;margin:0 0 10px}
 
-    /* small nav top icons (social) */
-    .social{display:flex;gap:10px;align-items:center;color:var(--muted)}
+/* ===== SERVICES ===== */
+.section{padding:50px 0}
+.section-title{font-size:28px;font-weight:800;margin-bottom:20px}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px}
+.service-card{background:#fff;padding:14px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.05)}
+.service-card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
 
-    /* ============ Hero slider (wide) ============ */
-    .hero{
-      background-image:var(--wood);
-      background-size:cover;
-      background-position:center;
-      padding:36px 0 48px;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero .overlay{
-      background:linear-gradient(90deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.12) 100%);
-      position:absolute;left:0;right:0;top:0;bottom:0;pointer-events:none;
-    }
+/* ===== CONTACT ===== */
+.contact-box{display:flex;flex-wrap:wrap;gap:20px}
+.contact-form{flex:1;min-width:260px;display:flex;flex-direction:column;gap:12px}
+.contact-form input,.contact-form textarea{padding:12px;border-radius:8px;border:1px solid #ccc}
 
-    .hero-inner{position:relative;z-index:2}
-    .hero-row{display:flex;gap:24px;align-items:center}
-    .hero-left{flex:1;max-width:640px;color:#fff;padding:28px}
-    .hero-left h1{font-family:'Montserrat',sans-serif;font-size:34px;margin:0 0 12px;line-height:1.05;font-weight:800;text-shadow:0 6px 24px rgba(0,0,0,0.35)}
-    .hero-left p{margin:0 0 18px;color:rgba(255,255,255,0.92);font-size:15px}
-    .hero-cta{display:flex;gap:12px;align-items:center}
-    .hero-box{background:rgba(17,17,17,0.76);padding:20px;border-radius:8px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,0.06);max-width:520px}
-    .hero-box h3{margin:0 0 8px;color:var(--accent);font-size:14px;font-weight:800}
-    .hero-box .txt{color:#fff;font-size:15px;line-height:1.4}
+/* ===== FOOTER ===== */
+.footer{background:#111;color:#fff;padding:24px 0;margin-top:20px}
+.footer-wrap{display:flex;justify-content:space-between;flex-wrap:wrap}
 
-    .hero-right{flex:1;display:flex;justify-content:flex-end}
-    .hero-mock{width:520px;border-radius:8px;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,0.28);border:8px solid rgba(255,255,255,0.02);background:#ddd}
-    .hero-mock img{display:block;width:100%;height:320px;object-fit:cover}
-
-    /* slider arrows (left/right) */
-    .slider-arrows{position:absolute;left:18px;right:18px;top:50%;transform:translateY(-50%);display:flex;justify-content:space-between;pointer-events:none;z-index:3}
-    .arrow{width:44px;height:44px;border-radius:8px;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;pointer-events:all}
-    .dots{position:absolute;left:50%;transform:translateX(-50%);bottom:18px;display:flex;gap:8px}
-
-    .dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.5);cursor:pointer}
-    .dot.active{background:var(--accent)}
-
-    /* ============ Main content layout ============ */
-    .main{background:#fff;padding:18px 0;border-top:6px solid #efefef}
-    .content-row{display:grid;grid-template-columns:2fr 1fr;gap:24px;align-items:start}
-
-    /* services / icons */
-    .services{display:flex;gap:16px;flex-wrap:wrap}
-    .svc{flex:1;min-width:170px;background:#fff;border-radius:8px;padding:14px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 10px 30px rgba(0,0,0,0.04)}
-    .svc h4{margin:0 0 6px;font-size:15px}
-    .svc p{margin:0;color:var(--muted);font-size:13px}
-
-    /* projects list */
-    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
-    .project{background:#fff;border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,0.04)}
-    .project img{width:100%;height:160px;object-fit:cover;display:block}
-    .project .meta{padding:12px}
-    .project .meta h5{margin:0 0 6px;font-size:15px}
-    .project .meta p{margin:0;color:var(--muted);font-size:13px}
-
-    /* right column snippets */
-    .side-card{background:#fff;border-radius:8px;padding:12px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 8px 24px rgba(0,0,0,0.04)}
-    .side-list{display:flex;flex-direction:column;gap:10px}
-    .side-item{display:flex;gap:12px;align-items:center}
-    .side-item img{width:64px;height:54px;object-fit:cover;border-radius:6px}
-
-    /* footer */
-    footer{background:#222;color:#fff;padding:28px 0;margin-top:26px}
-    footer .fwrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-    footer a{color:#fff;opacity:.95}
-
-    /* ============ Responsive ============ */
-    @media (max-width: 980px){
-      .hero-row{flex-direction:column}
-      .hero-right{justify-content:center;margin-top:18px}
-      .nav-wrap{height:84px}
-      nav .menu{gap:18px}
-      .projects{grid-template-columns:repeat(2,1fr)}
-      .content-row{grid-template-columns:1fr}
-    }
-    @media (max-width:600px){
-      .logo .text{font-size:14px}
-      .hero-left h1{font-size:24px}
-      .hero-mock img{height:200px}
-      .project img{height:140px}
-      nav .menu{display:none}
-    }
-
-  </style>
+/* ===== WHATSAPP FLOAT ===== */
+.whatsapp-float{position:fixed;right:16px;bottom:16px;width:60px;height:60px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;z-index:999}
+.whatsapp-float img{width:34px;height:34px}
+</style>
 </head>
+
 <body>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    <div class="container">
-      <div class="left">
-        <!-- Replace phone/email/address below with your live data -->
-        <div><strong>Phone:</strong> 8978625575</div>
-        <div><strong>Email:</strong> contact.eminentelevator@gmail.com</div>
-        <div><strong>Address:</strong> CPNR Green City, Balapur, Hyderabad</div>
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="container top-wrap">
+    <div>Phone: 8978625575 | Email: contact.eminentelevator@gmail.com</div>
+    <div>Mon - Sat: 8 AM – 6 PM</div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="container header-wrap">
+    <div class="logo">
+      <img src="data:image/png;base64,
+iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAclBM…" 
+      style="width:60px;height:60px;border-radius:50%">
+      <div class="logo-text">Eminent <span class="yellow">Elevators</span></div>
+    </div>
+
+    <nav class="nav">
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-overlay"></div>
+  <div class="container hero-inner">
+    <div class="hero-box">
+      <h3>HALL OF FAME</h3>
+      <h1>Reliable Lift Installation & Service</h1>
+      <p>Premium elevators, dumbwaiters & modernization with owner-supervised quality.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="gallery/img1.jpg">
+        <h3>Passenger Elevators</h3>
       </div>
-      <div class="right">
-        <span>Mon - Sat: 08:00 - 18:00</span>
-        <span style="margin-left:12px">|</span>
-        <span style="margin-left:12px">Follow us:</span>
-        <span class="social" style="margin-left:8px">🔗 🔗 🔗</span>
+      <div class="service-card">
+        <img src="gallery/img2.jpg">
+        <h3>Goods Lifts</h3>
+      </div>
+      <div class="service-card">
+        <img src="gallery/img3.jpg">
+        <h3>Dumbwaiters</h3>
+      </div>
+      <div class="service-card">
+        <img src="gallery/img4.jpg">
+        <h3>Hospital Elevators</h3>
       </div>
     </div>
   </div>
+</section>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container nav-wrap">
-      <div class="brand">
-        <div class="logo">
-          <div class="mark">EE</div>
-          <div class="text">Eminent <span style="color:var(--accent)">Elevators</span></div>
-        </div>
-        <div style="color:var(--muted);font-size:13px">Premium lifts • Installation • AMC</div>
-      </div>
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-box">
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name">
+        <input type="text" placeholder="Phone / Email">
+        <textarea placeholder="Project details..."></textarea>
+        <button class="btn-primary">Submit</button>
+      </form>
 
-      <nav>
-        <ul class="menu">
-          <li>Home</li>
-          <li>Projects</li>
-          <li>Services</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
-
-      <div class="header-actions">
-        <div class="btn-ghost">Request Quote</div>
-        <a class="btn-primary" href="tel:8978625575">Call: 8978625575</a>
-      </div>
-    </div>
-  </header>
-
-  <!-- HERO: wood background + text panel -->
-  <section class="hero" aria-label="Hero">
-    <div class="overlay" aria-hidden="true"></div>
-
-    <div class="container hero-inner">
-      <div class="hero-row">
-        <div class="hero-left">
-          <div class="hero-box" role="region" aria-label="Featured">
-            <h3>HALL OF FAME</h3>
-            <div class="txt">
-              <strong style="font-size:18px;display:block;margin-bottom:8px">Reliable Solutions for Vertical Transportation</strong>
-              <div style="color:rgba(255,255,255,0.92);margin-bottom:10px">Eminent Elevators — premium installation, service and modernization. Owner supervised projects with food-grade dumbwaiter specialization (Al-Baik).</div>
-              <div style="display:flex;gap:10px">
-                <a class="btn-primary" href="#projects">View Projects</a>
-                <a class="btn-ghost" href="#contact" style="background:#fff;color:#111">Request Site Visit</a>
-              </div>
-            </div>
-          </div>
-
-          <div style="margin-top:14px;color:rgba(255,255,255,0.87);font-size:13px">
-            <strong>Featured Project:</strong> Kitchen Dumbwaiter — Al-Baik (SUS 304, auto interlock, overload protection)
-          </div>
-        </div>
-
-        <div class="hero-right">
-          <div class="hero-mock" aria-hidden="true">
-            <!-- replace this image with your own wooden banner or hero image -->
-            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=6c6b4c6f4b5a5a2e4d2d0d7e8f4a9b1c" alt="Eminent Elevators hero">
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- arrows -->
-    <div class="slider-arrows">
-      <div class="arrow" id="prev" aria-label="Previous slide">‹</div>
-      <div style="flex:1"></div>
-      <div class="arrow" id="next" aria-label="Next slide">›</div>
-    </div>
-
-    <!-- dots -->
-    <div class="container" style="position:relative">
-      <div class="dots" id="dots">
-        <div class="dot active" data-slide="0"></div>
-        <div class="dot" data-slide="1"></div>
-        <div class="dot" data-slide="2"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MAIN content (services + projects + sidebar) -->
-  <main class="main container" role="main">
-    <div style="padding:18px 6px">
-      <!-- Quick intro + services -->
-      <div style="display:flex;justify-content:space-between;align-items:center;gap:20px">
-        <h2 style="margin:0;font-family:'Montserrat',sans-serif">What We Do</h2>
-        <div style="color:var(--muted)">Owner-supervised installations • Food-grade dumbwaiters • AMC & service</div>
-      </div>
-
-      <div style="margin-top:14px" class="services">
-        <div class="svc"><h4>Passenger Elevators</h4><p>Comfortable cabins with smooth gearless drives and premium finishes.</p></div>
-        <div class="svc"><h4>Goods Lifts</h4><p>Durable lifts for retail and logistics with reinforced guide rails.</p></div>
-        <div class="svc"><h4>Dumbwaiters (Kitchen)</h4><p>Food-grade SUS 304 cabins, interlocks, hygienic finishes — ideal for restaurants.</p></div>
-        <div class="svc"><h4>Hospital Lifts</h4><p>Wide-door lifts with precise leveling for patient transfer and stretchers.</p></div>
-        <div class="svc"><h4>MRL / Traction / Hydraulic</h4><p>System selection based on site constraints and performance needs.</p></div>
-        <div class="svc"><h4>AMC & Maintenance</h4><p>Planned maintenance, spare parts and emergency callouts.</p></div>
-      </div>
-
-      <!-- content grid -->
-      <div style="margin-top:20px" class="content-row">
-        <!-- left: projects grid -->
-        <div>
-          <h3 style="font-family:'Montserrat',sans-serif;margin:0 0 10px">Recent Projects & Case Studies</h3>
-          <div class="projects" aria-live="polite">
-            <div class="project">
-              <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1f2c5f4cd0f1ee3f3e9a1c9f4a7f8b2d" alt="Al-Baik dumbwaiter">
-              <div class="meta">
-                <h5>Al-Baik — Kitchen Dumbwaiter</h5>
-                <p>Food-grade SUS 304 dumbwaiter with auto interlock and overload protection. (Completed)</p>
-              </div>
-            </div>
-
-            <div class="project">
-              <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d" alt="Residential lift">
-              <div class="meta">
-                <h5>Balapur — Residential Passenger Lift</h5>
-                <p>Luxury cabin finishes with reliable VVVF drive for smooth travel.</p>
-              </div>
-            </div>
-
-            <div class="project">
-              <img src="https://images.unsplash.com/photo-1581092795360-3f2a5d3c6d90?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8aa4b7c6d5e4f3a2b1c0d9e8f7a6b5c4" alt="industrial lift">
-              <div class="meta">
-                <h5>Logistics Hub — Goods Lift</h5>
-                <p>High-capacity goods lift for warehouse logistic operations.</p>
-              </div>
-            </div>
-          </div>
-
-          <div style="text-align:center;margin-top:14px">
-            <a class="btn-primary" href="#projects">View All Projects</a>
-          </div>
-        </div>
-
-        <!-- right: side column -->
-        <aside>
-          <div class="side-card" style="margin-bottom:12px">
-            <h4 style="margin:0 0 8px">Contact & Quick Quote</h4>
-            <p style="margin:0 0 12px;color:var(--muted)">Call or WhatsApp to schedule a site visit.</p>
-            <div style="display:flex;gap:10px;align-items:center">
-              <a class="btn-primary" href="tel:8978625575">Call: 8978625575</a>
-              <div style="font-size:13px;color:var(--muted)">Or email:<br><strong>contact.eminentelevator@gmail.com</strong></div>
-            </div>
-          </div>
-
-          <div class="side-card" style="margin-bottom:12px">
-            <h4 style="margin:0 0 8px">Project Highlights</h4>
-            <ul style="margin:0;padding-left:18px;color:var(--muted)">
-              <li>Smooth & silent gearless operation</li>
-              <li>Premium SS cabin & food-grade options</li>
-              <li>Accurate leveling with microprocessor control</li>
-              <li>Energy-efficient drives</li>
-              <li>ARD, door interlocks & overspeed protection</li>
-            </ul>
-          </div>
-
-          <div class="side-card">
-            <h4 style="margin:0 0 8px">Latest Site Photos</h4>
-            <div class="side-list">
-              <div class="side-item"><img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=7788b9a3b4f6c2d3e4f5a6b7c8d9e0f1"><div style="font-size:13px;color:var(--muted)">Al-Baik kitchen fitout</div></div>
-              <div class="side-item"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9b8a7c6d5e4f3a2b1c0d9e8f7a6b5c4d"><div style="font-size:13px;color:var(--muted)">Installation at Balapur</div></div>
-            </div>
-          </div>
-
-        </aside>
-      </div>
-    </div>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container fwrap">
       <div>
-        <div style="font-weight:800;font-family:'Montserrat',sans-serif;font-size:18px">Eminent <span style="color:var(--accent)">Elevators</span></div>
-        <div style="color:#cfcfcf;margin-top:6px">© <span id="year"></span> Eminent Elevators · Hyderabad</div>
-      </div>
-
-      <div style="color:#cfcfcf">
-        <div>Phone: 8978625575</div>
-        <div style="margin-top:6px">Email: contact.eminentelevator@gmail.com</div>
+        <p><b>Phone:</b> 8978625575</p>
+        <p><b>Email:</b> contact.eminentelevator@gmail.com</p>
+        <p><b>Address:</b> Balapur, Hyderabad</p>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    // small year set
-    document.getElementById('year').textContent = new Date().getFullYear();
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-wrap">
+    <div>Eminent Elevators © 2025</div>
+    <div>Premium Lift Solutions</div>
+  </div>
+</footer>
 
-    // simple slide behavior (3 logical slides — swaps hero text / images)
-    (function(){
-      const slides = [
-        {
-          title: "Reliable Solutions for Vertical Transportation",
-          text: "Eminent Elevators — premium installation, service and modernization. Owner supervised projects with food-grade dumbwaiter specialization (Al-Baik).",
-          img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=6c6b4c6f4b5a5a2e4d2d0d7e8f4a9b1c"
-        },
-        {
-          title: "Kitchen Dumbwaiters for Restaurants",
-          text: "Food-grade SUS 304 cabins, auto door interlock and overload protection. Ideal for restaurants.",
-          img: "https://images.unsplash.com/photo-1523906630133-f6934a1abf2f?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d"
-        },
-        {
-          title: "AMC & Rapid Maintenance Support",
-          text: "Scheduled maintenance and 24/7 support to keep your lifts safe and operational. Minimise downtime with trained technicians.",
-          img: "https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=1e2d3c4b5a6f7e8d9c0b1a2c3d4e5f6a"
-        }
-      ];
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/918978625575" class="whatsapp-float">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+</a>
 
-      let idx = 0;
-      const total = slides.length;
-      const heroBoxTitle = document.querySelector('.hero-box strong');
-      const heroBoxText = document.querySelector('.hero-box .txt > div');
-      const heroImg = document.querySelector('.hero-mock img');
-      const dots = Array.from(document.querySelectorAll('.dot'));
-      const prev = document.getElementById('prev');
-      const next = document.getElementById('next');
-
-      function render(i){
-        idx = (i + total) % total;
-        heroBoxTitle.textContent = slides[idx].title;
-        heroBoxText.textContent = slides[idx].text;
-        heroImg.src = slides[idx].img;
-        dots.forEach(d => d.classList.remove('active'));
-        dots[idx].classList.add('active');
-      }
-
-      next.addEventListener('click', ()=> render(idx+1));
-      prev.addEventListener('click', ()=> render(idx-1));
-      dots.forEach(d => d.addEventListener('click', e => render(Number(e.target.dataset.slide))));
-
-      let timer = setInterval(()=> render(idx+1), 5000);
-      // pause on hover of hero area
-      const hero = document.querySelector('.hero');
-      hero.addEventListener('mouseenter', ()=> clearInterval(timer));
-      hero.addEventListener('mouseleave', ()=> timer = setInterval(()=> render(idx+1), 5000));
-
-      render(0);
-    })();
-  </script>
 </body>
 </html>
