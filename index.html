@@ -1,329 +1,398 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Eminent Elevators | Hyderabad</title>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="google-site-verification" content="hwHgTIPQcizmQlpfU0E2kjZuPr47N0BdJed6NP09GpI" />
+  <title>Eminent Elevators — BuildPress-style Modernized</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 
   <style>
-    /* ========== THEME VARIABLES (default: Gold) ========== */
-    :root {
-      --brand-1: #d4af37;   /* accent color */
-      --bg: #fcfbfa;        /* page bg */
-      --card: #ffffff;      /* card bg */
-      --dark: #0f0f10;      /* header dark text bg */
-      --muted: #6b6b6b;     /* muted text */
-      --accent-soft: rgba(212,175,55,0.08);
-      --radius: 12px;
-      --maxw: 1100px;
+    /* ============ Theme tokens ============ */
+    :root{
+      --accent: #f2b705;      /* bright yellow */
+      --accent-2: #d99c03;    /* darker yellow */
+      --dark-900: #2b2b2b;    /* header dark */
+      --dark-700: #4a4a4a;
+      --muted: #7f7f7f;
+      --white: #ffffff;
+      --wood: url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=4f2d5a4b0b9a8dfc4de4a7f8d3ed6b74'); /* background wood image — change if needed */
+      --container: 1180px;
+      --radius: 10px;
+      --shadow-lg: 0 12px 30px rgba(0,0,0,0.12);
     }
 
-    /* reset */
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%}
-    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--dark);line-height:1.6;-webkit-font-smoothing:antialiased}
+    /* ============ Reset & base ============ */
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Roboto",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;background:#f6f6f6;color:var(--dark-900);-webkit-font-smoothing:antialiased}
     a{color:inherit;text-decoration:none}
+    .container{max-width:var(--container);margin:0 auto;padding:0 18px}
 
-    /* HEADER */
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:12px 6%;
-      position:sticky;
-      top:0;
-      z-index:120;
-      background:var(--dark);
-      color:var(--card);
-      box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    /* ============ Top info bar ============ */
+    .topbar{background:#3b3b3b;color:#fff;font-size:13px}
+    .topbar .container{display:flex;align-items:center;justify-content:space-between;height:44px}
+    .topbar .left{display:flex;gap:20px;align-items:center}
+    .topbar i{opacity:.95}
+    .topbar .right{opacity:.95;font-size:13px}
+
+    /* ============ Header / boxed nav ============ */
+    header{background:var(--white);box-shadow:0 2px 8px rgba(12,12,12,0.05);position:sticky;top:0;z-index:60}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;height:90px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{display:flex;align-items:center;gap:10px}
+    .logo .mark{background:var(--dark-900);color:var(--white);padding:10px 12px;border-radius:6px;font-weight:800;font-family:'Montserrat',sans-serif}
+    .logo .text{font-weight:700;font-family:'Montserrat',sans-serif;color:var(--dark-900)}
+    nav{flex:1;margin-left:40px}
+    nav .menu{display:flex;justify-content:center;gap:28px;list-style:none;margin:0;padding:0;align-items:center}
+    nav .menu li{font-weight:600;color:var(--dark-900);font-size:15px}
+    .header-actions{display:flex;gap:10px;align-items:center}
+    .btn-ghost{padding:9px 14px;border-radius:8px;border:1px solid rgba(43,43,43,0.06);background:#fff;font-weight:600}
+    .btn-primary{background:linear-gradient(180deg,var(--accent),var(--accent-2));padding:10px 16px;border-radius:8px;font-weight:800;color:#111;box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+
+    /* small nav top icons (social) */
+    .social{display:flex;gap:10px;align-items:center;color:var(--muted)}
+
+    /* ============ Hero slider (wide) ============ */
+    .hero{
+      background-image:var(--wood);
+      background-size:cover;
+      background-position:center;
+      padding:36px 0 48px;
+      position:relative;
+      overflow:hidden;
     }
-    .header-left{display:flex;align-items:center;gap:14px}
-    .logo{display:flex;align-items:center;gap:12px;font-weight:700;text-transform:uppercase;color:var(--card)}
-    .logo img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--brand-1);background:#fff}
-    nav ul{display:flex;gap:18px;list-style:none}
-    nav a{color:rgba(255,255,255,0.95);font-size:.95rem}
-    .call-header{color:var(--brand-1);font-weight:700}
-
-    .theme-select {
-      background:transparent;border:1px solid rgba(255,255,255,0.08);color:#fff;padding:6px 8px;border-radius:8px;font-weight:700;
+    .hero .overlay{
+      background:linear-gradient(90deg, rgba(0,0,0,0.42) 0%, rgba(0,0,0,0.12) 100%);
+      position:absolute;left:0;right:0;top:0;bottom:0;pointer-events:none;
     }
 
-    /* LAYOUT */
-    main{max-width:var(--maxw);margin:20px auto;padding:0 6%}
+    .hero-inner{position:relative;z-index:2}
+    .hero-row{display:flex;gap:24px;align-items:center}
+    .hero-left{flex:1;max-width:640px;color:#fff;padding:28px}
+    .hero-left h1{font-family:'Montserrat',sans-serif;font-size:34px;margin:0 0 12px;line-height:1.05;font-weight:800;text-shadow:0 6px 24px rgba(0,0,0,0.35)}
+    .hero-left p{margin:0 0 18px;color:rgba(255,255,255,0.92);font-size:15px}
+    .hero-cta{display:flex;gap:12px;align-items:center}
+    .hero-box{background:rgba(17,17,17,0.76);padding:20px;border-radius:8px;box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,0.06);max-width:520px}
+    .hero-box h3{margin:0 0 8px;color:var(--accent);font-size:14px;font-weight:800}
+    .hero-box .txt{color:#fff;font-size:15px;line-height:1.4}
 
-/* HERO */
-    .hero{display:grid;grid-template-columns:1.3fr 1fr;gap:26px;align-items:center;padding:34px 0}
-    .hero h1{font-size:2.4rem;margin-bottom:8px}
-    .hero h1 span{color:var(--brand-1)}
-    .hero p{color:#333;max-width:640px}
-    .btn-primary{display:inline-block;background:var(--brand-1);color:#111;padding:10px 20px;border-radius:999px;font-weight:700;margin-top:12px}
+    .hero-right{flex:1;display:flex;justify-content:flex-end}
+    .hero-mock{width:520px;border-radius:8px;overflow:hidden;box-shadow:0 18px 45px rgba(0,0,0,0.28);border:8px solid rgba(255,255,255,0.02);background:#ddd}
+    .hero-mock img{display:block;width:100%;height:320px;object-fit:cover}
 
-    .hero-card{background:var(--dark);color:var(--card);border-radius:14px;padding:16px;box-shadow:0 18px 36px rgba(0,0,0,0.12)}
-    .hero-card .muted{color:var(--muted);font-size:.95rem}
+    /* slider arrows (left/right) */
+    .slider-arrows{position:absolute;left:18px;right:18px;top:50%;transform:translateY(-50%);display:flex;justify-content:space-between;pointer-events:none;z-index:3}
+    .arrow{width:44px;height:44px;border-radius:8px;background:rgba(0,0,0,0.45);display:flex;align-items:center;justify-content:center;color:#fff;cursor:pointer;pointer-events:all}
+    .dots{position:absolute;left:50%;transform:translateX(-50%);bottom:18px;display:flex;gap:8px}
 
-/* RECENT PROJECT - compact premium */
-    .recent-project{margin-top:14px;padding:16px;border-radius:var(--radius);
-      background: linear-gradient(180deg,var(--accent-soft),rgba(255,255,255,0.94));
-      border:1px solid rgba(0,0,0,0.04);box-shadow:0 10px 22px rgba(0,0,0,0.06)}
-    .recent-grid{display:grid;grid-template-columns:1fr;gap:12px;align-items:start}
-    .rp-badge{display:inline-block;background:rgba(0,0,0,0.04);color:var(--brand-1);padding:6px 10px;border-radius:999px;font-weight:800}
-    .rp-title{font-size:1.08rem;font-weight:800;color:var(--dark);margin:8px 0}
-    .rp-desc{color:#222;margin-bottom:10px}
-    .rp-list{margin-left:18px;margin-bottom:10px;color:#222;line-height:1.5}
-    .rp-meta{font-size:.92rem;color:var(--muted);margin-top:6px}
-    .rp-cta{display:inline-block;margin-top:10px;background:var(--dark);color:var(--brand-1);padding:9px 12px;border-radius:10px;font-weight:700}
-    .rp-preview{display:flex;gap:12px;align-items:center}
-    .rp-img{width:120px;height:88px;border-radius:10px;overflow:hidden;background:#efe7dc;display:flex;align-items:center;justify-content:center;color:#666;font-weight:700;font-size:.95rem;border:1px solid rgba(0,0,0,0.04);flex-shrink:0}
-    .rp-key{font-size:.92rem;color:#444}
+    .dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.5);cursor:pointer}
+    .dot.active{background:var(--accent)}
 
-/* small video wrapper in recent project */
-    .rp-video { margin-top:12px; border-radius:10px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.12) }
-    .rp-video video{width:100%;height:auto;display:block}
+    /* ============ Main content layout ============ */
+    .main{background:#fff;padding:18px 0;border-top:6px solid #efefef}
+    .content-row{display:grid;grid-template-columns:2fr 1fr;gap:24px;align-items:start}
 
-/* main project video */
-    .video-section{margin-top:16px}
-    .video-wrapper{background:#000;border-radius:12px;overflow:hidden;box-shadow:0 14px 36px rgba(0,0,0,0.18)}
-    video{width:100%;height:auto;display:block}
+    /* services / icons */
+    .services{display:flex;gap:16px;flex-wrap:wrap}
+    .svc{flex:1;min-width:170px;background:#fff;border-radius:8px;padding:14px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 10px 30px rgba(0,0,0,0.04)}
+    .svc h4{margin:0 0 6px;font-size:15px}
+    .svc p{margin:0;color:var(--muted);font-size:13px}
 
-/* HIGHLIGHTS */
-    #highlights{margin-top:18px;padding:18px;border-radius:12px;background:var(--card);box-shadow:0 10px 26px rgba(0,0,0,0.04);border-left:4px solid var(--brand-1)}
-    .highlight-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:12px}
-    .highlight-card{background:linear-gradient(180deg,#fff,#fff);padding:12px;border-radius:8px;box-shadow:0 8px 18px rgba(17,17,17,0.04)}
-    .highlight-card h3{color:var(--dark);margin-bottom:6px}
-    .highlight-card p{color:#444;font-size:.95rem}
+    /* projects list */
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+    .project{background:#fff;border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,0.04)}
+    .project img{width:100%;height:160px;object-fit:cover;display:block}
+    .project .meta{padding:12px}
+    .project .meta h5{margin:0 0 6px;font-size:15px}
+    .project .meta p{margin:0;color:var(--muted);font-size:13px}
 
-/* types & contact */
-    .pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
-    .pill{background:linear-gradient(180deg,#f9f5e9,#fbf8f4);padding:8px 12px;border-radius:999px;border:1px solid rgba(0,0,0,0.04)}
+    /* right column snippets */
+    .side-card{background:#fff;border-radius:8px;padding:12px;border:1px solid rgba(0,0,0,0.04);box-shadow:0 8px 24px rgba(0,0,0,0.04)}
+    .side-list{display:flex;flex-direction:column;gap:10px}
+    .side-item{display:flex;gap:12px;align-items:center}
+    .side-item img{width:64px;height:54px;object-fit:cover;border-radius:6px}
 
-    footer{margin-top:26px;padding:18px 6%;text-align:center;color:var(--muted)}
+    /* footer */
+    footer{background:#222;color:#fff;padding:28px 0;margin-top:26px}
+    footer .fwrap{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+    footer a{color:#fff;opacity:.95}
 
-/* responsive */
-    @media(min-width:900px){
-      .recent-grid{grid-template-columns:1fr 360px;gap:18px}
-      .rp-img{width:100%;height:220px;border-radius:8px}
-      .rp-preview{flex-direction:column;align-items:stretch}
+    /* ============ Responsive ============ */
+    @media (max-width: 980px){
+      .hero-row{flex-direction:column}
+      .hero-right{justify-content:center;margin-top:18px}
+      .nav-wrap{height:84px}
+      nav .menu{gap:18px}
+      .projects{grid-template-columns:repeat(2,1fr)}
+      .content-row{grid-template-columns:1fr}
     }
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr}
-      nav{display:none}
-      header{padding:10px 4%}
+    @media (max-width:600px){
+      .logo .text{font-size:14px}
+      .hero-left h1{font-size:24px}
+      .hero-mock img{height:200px}
+      .project img{height:140px}
+      nav .menu{display:none}
     }
 
   </style>
 </head>
 <body>
 
-<header>
-  <div class="header-left">
-    <div class="logo" aria-label="Eminent Elevators logo and name">
-      <!-- Logo file: eminent.logo.png (must be uploaded into repo root) -->
-      <img src="eminent.logo.png" alt="Eminent Elevators Logo">
-      <div style="line-height:1">
-        <div style="font-weight:800">Eminent</div>
-        <div style="font-size:0.84rem;color:var(--muted);margin-top:0">Elevators</div>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="container">
+      <div class="left">
+        <!-- Replace phone/email/address below with your live data -->
+        <div><strong>Phone:</strong> 8978625575</div>
+        <div><strong>Email:</strong> contact.eminentelevator@gmail.com</div>
+        <div><strong>Address:</strong> CPNR Green City, Balapur, Hyderabad</div>
+      </div>
+      <div class="right">
+        <span>Mon - Sat: 08:00 - 18:00</span>
+        <span style="margin-left:12px">|</span>
+        <span style="margin-left:12px">Follow us:</span>
+        <span class="social" style="margin-left:8px">🔗 🔗 🔗</span>
       </div>
     </div>
   </div>
 
-  <div style="display:flex;align-items:center;gap:12px">
-    <div class="call-header">📞 8978625575</div>
+  <!-- HEADER -->
+  <header>
+    <div class="container nav-wrap">
+      <div class="brand">
+        <div class="logo">
+          <div class="mark">EE</div>
+          <div class="text">Eminent <span style="color:var(--accent)">Elevators</span></div>
+        </div>
+        <div style="color:var(--muted);font-size:13px">Premium lifts • Installation • AMC</div>
+      </div>
 
-    <select id="themeSelector" class="theme-select" aria-label="Theme selector">
-      <option value="gold" selected>Gold</option>
-      <option value="teal">Teal</option>
-      <option value="dark">Dark</option>
-      <option value="minimal">Multicolour<l</option>
-    </select>
-  </div>
-</header>
-
-<main>
-  <!-- HERO -->
-  <section class="hero" aria-label="hero">
-    <div>
-      <div style="color:var(--muted);font-weight:700;margin-bottom:6px">Reliable Solutions for Vertical Transportation</div>
-      <h1><span>Eminent</span> Elevators</h1>
-      <p>Premium lift installation, service, and modernization for residential and commercial buildings in Hyderabad. Owner-supervised projects, reliable components, and fast service.</p>
-      <a class="btn-primary" href="#contact">Get in Touch</a>
-    </div>
-
-    <div class="hero-card" aria-hidden="false">
-      <div style="height:140px;border-radius:10px;background:linear-gradient(135deg,#222,#111);display:flex;align-items:center;justify-content:center;color:#ddd;font-weight:700">Eminent Project</div>
-      <div style="padding-top:12px;color:var(--muted)">Recent on-site installations with precise leveling and premium cabin finishes delivered on time.</div>
-    </div>
-  </section>
-
-  <!-- RECENT PROJECT - AL-BAIK (with inline video) -->
-  <section class="recent-project" id="recent-project" aria-label="Recent project - Al-Baik">
-    <div class="recent-grid">
-      <div>
-        <div class="rp-badge">Running Project</div>
-        <div class="rp-title">🍽 Kitchen Dumbwaiter Lift – Al-Baik</div>
-
-        <div class="rp-desc">Food-grade dumbwaiter installed at Al-Baik for fast, hygienic, and reliable kitchen-to-service deliveries. Engineered for heavy use in restaurant environments.</div>
-
-        <ul class="rp-list">
-          <li>Stainless-steel food-grade cabin (SUS 304)</li>
-          <li>Smooth & quiet drive with soft start/stop</li>
-          <li>Auto door interlock & fail-safe features</li>
-          <li>Compact shaft for space-constrained kitchens</li>
-          <li>Overload protection & easy maintenance access</li>
+      <nav>
+        <ul class="menu">
+          <li>Home</li>
+          <li>Projects</li>
+          <li>Services</li>
+          <li>About</li>
+          <li>Contact</li>
         </ul>
+      </nav>
 
-        <div class="rp-meta"><strong>Location:</strong> Al-Baik &nbsp; • &nbsp; <strong>Status:</strong> Running Project — Completed</div>
+      <div class="header-actions">
+        <div class="btn-ghost">Request Quote</div>
+        <a class="btn-primary" href="tel:8978625575">Call: 8978625575</a>
+      </div>
+    </div>
+  </header>
 
-        <a class="rp-cta" href="#contact">Request Site Visit</a>
+  <!-- HERO: wood background + text panel -->
+  <section class="hero" aria-label="Hero">
+    <div class="overlay" aria-hidden="true"></div>
 
-        <!-- AL-BAIK video included here -->
-        <div class="rp-video" aria-hidden="false">
-          <video controls playsinline preload="metadata">
-            <source src="VID-20251122145839.mp4" type="video/mp4">
-            Your browser does not support HTML5 video.
-          </video>
+    <div class="container hero-inner">
+      <div class="hero-row">
+        <div class="hero-left">
+          <div class="hero-box" role="region" aria-label="Featured">
+            <h3>HALL OF FAME</h3>
+            <div class="txt">
+              <strong style="font-size:18px;display:block;margin-bottom:8px">Reliable Solutions for Vertical Transportation</strong>
+              <div style="color:rgba(255,255,255,0.92);margin-bottom:10px">Eminent Elevators — premium installation, service and modernization. Owner supervised projects with food-grade dumbwaiter specialization (Al-Baik).</div>
+              <div style="display:flex;gap:10px">
+                <a class="btn-primary" href="#projects">View Projects</a>
+                <a class="btn-ghost" href="#contact" style="background:#fff;color:#111">Request Site Visit</a>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;color:rgba(255,255,255,0.87);font-size:13px">
+            <strong>Featured Project:</strong> Kitchen Dumbwaiter — Al-Baik (SUS 304, auto interlock, overload protection)
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-mock" aria-hidden="true">
+            <!-- replace this image with your own wooden banner or hero image -->
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=6c6b4c6f4b5a5a2e4d2d0d7e8f4a9b1c" alt="Eminent Elevators hero">
+          </div>
         </div>
       </div>
+    </div>
 
-      <div class="rp-preview" aria-hidden="false">
-        <div class="rp-img">AL-BAIK</div>
+    <!-- arrows -->
+    <div class="slider-arrows">
+      <div class="arrow" id="prev" aria-label="Previous slide">‹</div>
+      <div style="flex:1"></div>
+      <div class="arrow" id="next" aria-label="Next slide">›</div>
+    </div>
 
-        <div class="rp-key" style="padding-left:6px">
-          <div style="font-weight:700">Project Type</div>
-          <div style="color:#666">Kitchen Dumbwaiter</div>
-          <div style="margin-top:8px;font-weight:700">Installed</div>
-          <div style="color:#666">Nov 2025</div>
+    <!-- dots -->
+    <div class="container" style="position:relative">
+      <div class="dots" id="dots">
+        <div class="dot active" data-slide="0"></div>
+        <div class="dot" data-slide="1"></div>
+        <div class="dot" data-slide="2"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN content (services + projects + sidebar) -->
+  <main class="main container" role="main">
+    <div style="padding:18px 6px">
+      <!-- Quick intro + services -->
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:20px">
+        <h2 style="margin:0;font-family:'Montserrat',sans-serif">What We Do</h2>
+        <div style="color:var(--muted)">Owner-supervised installations • Food-grade dumbwaiters • AMC & service</div>
+      </div>
+
+      <div style="margin-top:14px" class="services">
+        <div class="svc"><h4>Passenger Elevators</h4><p>Comfortable cabins with smooth gearless drives and premium finishes.</p></div>
+        <div class="svc"><h4>Goods Lifts</h4><p>Durable lifts for retail and logistics with reinforced guide rails.</p></div>
+        <div class="svc"><h4>Dumbwaiters (Kitchen)</h4><p>Food-grade SUS 304 cabins, interlocks, hygienic finishes — ideal for restaurants.</p></div>
+        <div class="svc"><h4>Hospital Lifts</h4><p>Wide-door lifts with precise leveling for patient transfer and stretchers.</p></div>
+        <div class="svc"><h4>MRL / Traction / Hydraulic</h4><p>System selection based on site constraints and performance needs.</p></div>
+        <div class="svc"><h4>AMC & Maintenance</h4><p>Planned maintenance, spare parts and emergency callouts.</p></div>
+      </div>
+
+      <!-- content grid -->
+      <div style="margin-top:20px" class="content-row">
+        <!-- left: projects grid -->
+        <div>
+          <h3 style="font-family:'Montserrat',sans-serif;margin:0 0 10px">Recent Projects & Case Studies</h3>
+          <div class="projects" aria-live="polite">
+            <div class="project">
+              <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=1f2c5f4cd0f1ee3f3e9a1c9f4a7f8b2d" alt="Al-Baik dumbwaiter">
+              <div class="meta">
+                <h5>Al-Baik — Kitchen Dumbwaiter</h5>
+                <p>Food-grade SUS 304 dumbwaiter with auto interlock and overload protection. (Completed)</p>
+              </div>
+            </div>
+
+            <div class="project">
+              <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d" alt="Residential lift">
+              <div class="meta">
+                <h5>Balapur — Residential Passenger Lift</h5>
+                <p>Luxury cabin finishes with reliable VVVF drive for smooth travel.</p>
+              </div>
+            </div>
+
+            <div class="project">
+              <img src="https://images.unsplash.com/photo-1581092795360-3f2a5d3c6d90?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8aa4b7c6d5e4f3a2b1c0d9e8f7a6b5c4" alt="industrial lift">
+              <div class="meta">
+                <h5>Logistics Hub — Goods Lift</h5>
+                <p>High-capacity goods lift for warehouse logistic operations.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align:center;margin-top:14px">
+            <a class="btn-primary" href="#projects">View All Projects</a>
+          </div>
         </div>
+
+        <!-- right: side column -->
+        <aside>
+          <div class="side-card" style="margin-bottom:12px">
+            <h4 style="margin:0 0 8px">Contact & Quick Quote</h4>
+            <p style="margin:0 0 12px;color:var(--muted)">Call or WhatsApp to schedule a site visit.</p>
+            <div style="display:flex;gap:10px;align-items:center">
+              <a class="btn-primary" href="tel:8978625575">Call: 8978625575</a>
+              <div style="font-size:13px;color:var(--muted)">Or email:<br><strong>contact.eminentelevator@gmail.com</strong></div>
+            </div>
+          </div>
+
+          <div class="side-card" style="margin-bottom:12px">
+            <h4 style="margin:0 0 8px">Project Highlights</h4>
+            <ul style="margin:0;padding-left:18px;color:var(--muted)">
+              <li>Smooth & silent gearless operation</li>
+              <li>Premium SS cabin & food-grade options</li>
+              <li>Accurate leveling with microprocessor control</li>
+              <li>Energy-efficient drives</li>
+              <li>ARD, door interlocks & overspeed protection</li>
+            </ul>
+          </div>
+
+          <div class="side-card">
+            <h4 style="margin:0 0 8px">Latest Site Photos</h4>
+            <div class="side-list">
+              <div class="side-item"><img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=7788b9a3b4f6c2d3e4f5a6b7c8d9e0f1"><div style="font-size:13px;color:var(--muted)">Al-Baik kitchen fitout</div></div>
+              <div class="side-item"><img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=9b8a7c6d5e4f3a2b1c0d9e8f7a6b5c4d"><div style="font-size:13px;color:var(--muted)">Installation at Balapur</div></div>
+            </div>
+          </div>
+
+        </aside>
       </div>
     </div>
-  </section>
+  </main>
 
-  <!-- Main Project Video -->
-  <section id="project-video" class="video-section" aria-label="Project video">
-    <h2 style="margin-bottom:6px">Project Video</h2>
-    <p style="color:var(--muted);margin-bottom:12px">On-site installation highlight</p>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container fwrap">
+      <div>
+        <div style="font-weight:800;font-family:'Montserrat',sans-serif;font-size:18px">Eminent <span style="color:var(--accent)">Elevators</span></div>
+        <div style="color:#cfcfcf;margin-top:6px">© <span id="year"></span> Eminent Elevators · Hyderabad</div>
+      </div>
 
-    <div class="video-wrapper">
-      <video controls playsinline preload="metadata">
-        <source src="VID-20250622-WA0074.mp4" type="video/mp4">
-        Your browser does not support HTML5 video.
-      </video>
-    </div>
-
-    <div style="color:var(--muted);margin-top:10px">Live installation footage — Balapur Project. For site visits or bookings, call/WhatsApp 8978625575.</div>
-  </section>
-
-  <!-- HIGHLIGHTS -->
-  <section id="highlights">
-    <h2>Elevator Project Highlights</h2>
-    <p style="color:var(--muted)">Quality, safety, and smooth performance in every installation.</p>
-
-    <div class="highlight-list">
-      <div class="highlight-card">
-        <h3>Smooth & Silent Gearless Operation</h3>
-        <p>Gearless drive for vibration-free operation and premium ride comfort.</p>
-      </div>
-      <div class="highlight-card">
-        <h3>Premium SS Cabin Finish</h3>
-        <p>Food-grade stainless steel cabin options for hygienic environments.</p>
-      </div>
-      <div class="highlight-card">
-        <h3>High-Strength Shaft Work</h3>
-        <p>Reinforced guide rails and precision alignment for lasting safety.</p>
-      </div>
-      <div class="highlight-card">
-        <h3>Accurate Leveling</h3>
-        <p>Soft start/stop and microprocessor-leveling for perfect landings.</p>
-      </div>
-      <div class="highlight-card">
-        <h3>Energy Efficient Systems</h3>
-        <p>Optimized drives reduce consumption and operating costs.</p>
-      </div>
-      <div class="highlight-card">
-        <h3>Advanced Safety Features</h3>
-        <p>Includes ARD, door interlocks, overspeed protection and emergency stop.</p>
+      <div style="color:#cfcfcf">
+        <div>Phone: 8978625575</div>
+        <div style="margin-top:6px">Email: contact.eminentelevator@gmail.com</div>
       </div>
     </div>
-  </section>
+  </footer>
 
-  <!-- TYPES -->
-  <section id="types">
-    <h2>Elevator Types</h2>
-    <div class="pill-row" style="margin-top:8px">
-      <div class="pill">Passenger Elevator</div>
-      <div class="pill">Home Lift</div>
-      <div class="pill">Goods Lift</div>
-      <div class="pill">Hospital Elevator</div>
-      <div class="pill">MRL Elevator</div>
-      <div class="pill">Traction</div>
-      <div class="pill">Hydraulic</div>
-      <div class="pill">AMC Support</div>
-    </div>
-  </section>
+  <script>
+    // small year set
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  <!-- CONTACT -->
-  <section id="contact" style="padding-top:26px;padding-bottom:40px">
-    <h2>Contact Us</h2>
-    <p style="color:var(--muted)">Share your site details and we’ll suggest the right lift solution.</p>
-    <p><strong>Phone:</strong> 8978625575</p>
-    <p><strong>Email:</strong> contact.eminentelevator@gmail.com</p>
-    <p><strong>Address:</strong> CPNR Green City, Balapur, Hyderabad</p>
-  </section>
+    // simple slide behavior (3 logical slides — swaps hero text / images)
+    (function(){
+      const slides = [
+        {
+          title: "Reliable Solutions for Vertical Transportation",
+          text: "Eminent Elevators — premium installation, service and modernization. Owner supervised projects with food-grade dumbwaiter specialization (Al-Baik).",
+          img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=6c6b4c6f4b5a5a2e4d2d0d7e8f4a9b1c"
+        },
+        {
+          title: "Kitchen Dumbwaiters for Restaurants",
+          text: "Food-grade SUS 304 cabins, auto door interlock and overload protection. Ideal for restaurants.",
+          img: "https://images.unsplash.com/photo-1523906630133-f6934a1abf2f?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d"
+        },
+        {
+          title: "AMC & Rapid Maintenance Support",
+          text: "Scheduled maintenance and 24/7 support to keep your lifts safe and operational. Minimise downtime with trained technicians.",
+          img: "https://images.unsplash.com/photo-1519744792095-2f2205e87b6f?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=1e2d3c4b5a6f7e8d9c0b1a2c3d4e5f6a"
+        }
+      ];
 
-</main>
+      let idx = 0;
+      const total = slides.length;
+      const heroBoxTitle = document.querySelector('.hero-box strong');
+      const heroBoxText = document.querySelector('.hero-box .txt > div');
+      const heroImg = document.querySelector('.hero-mock img');
+      const dots = Array.from(document.querySelectorAll('.dot'));
+      const prev = document.getElementById('prev');
+      const next = document.getElementById('next');
 
-<footer>
-  © <span id="year"></span> Eminent Elevators · Hyderabad
-</footer>
+      function render(i){
+        idx = (i + total) % total;
+        heroBoxTitle.textContent = slides[idx].title;
+        heroBoxText.textContent = slides[idx].text;
+        heroImg.src = slides[idx].img;
+        dots.forEach(d => d.classList.remove('active'));
+        dots[idx].classList.add('active');
+      }
 
-<script>
-  // set year
-  document.getElementById('year').textContent = new Date().getFullYear();
+      next.addEventListener('click', ()=> render(idx+1));
+      prev.addEventListener('click', ()=> render(idx-1));
+      dots.forEach(d => d.addEventListener('click', e => render(Number(e.target.dataset.slide))));
 
-  // Theme switcher: previews four different looks
-  const themeSelector = document.getElementById('themeSelector');
-  themeSelector.addEventListener('change', e => {
-    const v = e.target.value;
-    if (v === 'gold') {
-      document.documentElement.style.setProperty('--brand-1','#d4af37');
-      document.documentElement.style.setProperty('--bg','#fcfbfa');
-      document.documentElement.style.setProperty('--card','#ffffff');
-      document.documentElement.style.setProperty('--dark','#0f0f10');
-      document.documentElement.style.setProperty('--muted','#6b6b6b');
-      document.documentElement.style.setProperty('--accent-soft','rgba(212,175,55,0.08)');
-    } else if (v === 'teal') {
-      document.documentElement.style.setProperty('--brand-1','#0fb3a6');
-      document.documentElement.style.setProperty('--bg','#f7fffd');
-      document.documentElement.style.setProperty('--card','#ffffff');
-      document.documentElement.style.setProperty('--dark','#0b2020');
-      document.documentElement.style.setProperty('--muted','#3c6b66');
-      document.documentElement.style.setProperty('--accent-soft','rgba(15,179,166,0.08)');
-    } else if (v === 'dark') {
-      document.documentElement.style.setProperty('--brand-1','#d4af37');
-      document.documentElement.style.setProperty('--bg','#070708');
-      document.documentElement.style.setProperty('--card','#0f0f10');
-      document.documentElement.style.setProperty('--dark','#ffffff');
-      document.documentElement.style.setProperty('--muted','#9aa0a6');
-      document.documentElement.style.setProperty('--accent-soft','rgba(212,175,55,0.04)');
-    } else if (v === 'minimal') {
-      document.documentElement.style.setProperty('--brand-1','#1f2937');
-      document.documentElement.style.setProperty('--bg','#ffffff');
-      document.documentElement.style.setProperty('--card','#ffffff');
-      document.documentElement.style.setProperty('--dark','#111827');
-      document.documentElement.style.setProperty('--muted','#6b7280');
-      document.documentElement.style.setProperty('--accent-soft','rgba(31,41,55,0.04)');
-    }
-  });
+      let timer = setInterval(()=> render(idx+1), 5000);
+      // pause on hover of hero area
+      const hero = document.querySelector('.hero');
+      hero.addEventListener('mouseenter', ()=> clearInterval(timer));
+      hero.addEventListener('mouseleave', ()=> timer = setInterval(()=> render(idx+1), 5000));
 
-  // remember last selected theme
-  const saved = localStorage.getItem('eminent_theme');
-  if (saved) {
-    themeSelector.value = saved;
-    themeSelector.dispatchEvent(new Event('change'));
-  }
-  themeSelector.addEventListener('change', () => {
-    localStorage.setItem('eminent_theme', themeSelector.value);
-  });
-</script>
+      render(0);
+    })();
+  </script>
 </body>
 </html>
