@@ -1,167 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eminent Elevators | Premier Lift Solutions Hyderabad</title>
+    <style>
+        :root {
+            --gold: #d4a017;
+            --dark: #121212;
+            --light-gray: #f8f9fa;
+            --text-gray: #555;
+            --white: #ffffff;
+        }
 
-<title>Eminent Elevators | Lift Installation Hyderabad</title>
-<meta name="description" content="Lift installation, AMC, modernization services in Hyderabad. Eminent Elevators.">
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: var(--dark); overflow-x: hidden; }
 
-<link rel="icon" href="assets/logo.png">
+        /* Navigation */
+        nav { background: var(--white); padding: 20px 10%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--dark); letter-spacing: 1px; }
+        .nav-links a { text-decoration: none; color: var(--dark); margin-left: 30px; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; }
 
-<style>
-body {margin:0;font-family:Arial;line-height:1.6;}
+        /* Hero Section */
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('1000164952.jpg'); /* Your shaft photo */
+            background-size: cover; background-position: center;
+            display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+        }
+        .hero-content h1 { font-size: 4rem; font-weight: 800; margin-bottom: 20px; }
+        .hero-content p { font-size: 1.4rem; margin-bottom: 40px; font-weight: 300; letter-spacing: 1px; }
+        .btn-gold { background: var(--gold); color: #000; padding: 18px 40px; text-decoration: none; font-weight: bold; border-radius: 2px; transition: 0.3s; text-transform: uppercase; }
+        .btn-gold:hover { background: var(--white); }
 
-header {
-background:#000;color:#fff;
-padding:15px;
-display:flex;justify-content:space-between;align-items:center;
-}
+        /* Stats Bar */
+        .stats { background: var(--dark); color: var(--white); padding: 40px 10%; display: flex; justify-content: space-around; text-align: center; }
+        .stat-item h3 { color: var(--gold); font-size: 2.5rem; }
 
-header img {height:45px;}
+        /* About Section */
+        .about { padding: 100px 15%; text-align: center; background: var(--white); }
+        .about h2 { font-size: 2.5rem; margin-bottom: 30px; }
+        .about p { font-size: 1.1rem; color: var(--text-gray); max-width: 800px; margin: 0 auto 40px; }
 
-nav a {color:#fff;margin:0 10px;text-decoration:none;}
+        /* Detailed Services */
+        .services { padding: 100px 10%; background: var(--light-gray); }
+        .services-header { text-align: center; margin-bottom: 60px; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .service-card { background: var(--white); padding: 50px; border-bottom: 4px solid var(--gold); box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .service-card h3 { margin-bottom: 20px; font-size: 1.5rem; }
 
-.hero {
-height:90vh;
-background:linear-gradient(#000000aa,#000000aa),
-url('assets/lift-main.jpg') center/cover;
-display:flex;flex-direction:column;
-align-items:center;justify-content:center;
-color:#fff;text-align:center;
-}
+        /* Process Section (The "Long" feel) */
+        .process { padding: 100px 10%; }
+        .process-step { display: flex; align-items: center; margin-bottom: 50px; }
+        .step-num { font-size: 4rem; font-weight: 900; color: #eee; margin-right: 40px; }
+        .step-text h4 { font-size: 1.5rem; margin-bottom: 10px; }
 
-.hero h1 {font-size:40px;margin:0;}
+        /* Gallery Section */
+        .gallery { padding: 100px 10%; background: var(--dark); color: var(--white); }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 50px; }
+        .gallery-item img { width: 100%; height: 300px; object-fit: cover; filter: grayscale(50%); transition: 0.5s; }
+        .gallery-item img:hover { filter: grayscale(0%); transform: scale(1.05); }
 
-.section {
-padding:60px 20px;
-text-align:center;
-}
+        /* Contact Section */
+        .contact { padding: 100px 10%; text-align: center; }
+        .contact-info { margin-top: 40px; font-size: 1.2rem; }
 
-.container {
-max-width:1000px;
-margin:auto;
-}
-
-.grid {
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card {
-background:#f4f4f4;
-padding:20px;
-border-radius:10px;
-}
-
-.gallery img {
-width:100%;
-border-radius:10px;
-}
-
-footer {
-background:#000;color:#fff;
-text-align:center;
-padding:20px;
-}
-
-.whatsapp {
-position:fixed;
-bottom:20px;
-right:20px;
-background:green;
-color:#fff;
-padding:12px;
-border-radius:50px;
-text-decoration:none;
-}
-</style>
+        footer { background: #000; color: #555; padding: 50px; text-align: center; border-top: 1px solid #222; }
+    </style>
 </head>
-
 <body>
 
-<header>
-<img src="assets/logo.png" alt="logo">
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
+    <nav>
+        <div class="logo">EMINENT</div>
+        <div class="nav-links">
+            <a href="#about">Company</a>
+            <a href="#services">Solutions</a>
+            <a href="#projects">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-<section class="hero" id="home">
-<h1>Eminent Elevators</h1>
-<p>Lift Installation | AMC | Modernization</p>
-</section>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ELEVATING STANDARDS</h1>
+            <p>Hyderabad’s Leader in High-Precision Elevator Installations</p>
+            <a href="https://wa.me/8978625575" class="btn-gold">Consult an Expert</a>
+        </div>
+    </section>
 
-<section class="section" id="about">
-<div class="container">
-<h2>About Us</h2>
-<p>
-Eminent Elevators is a professional lift installation and service company based in Hyderabad. 
-We provide safe, reliable, and high-quality elevator solutions for residential and commercial buildings.
-</p>
-</div>
-</section>
+    <section class="stats">
+        <div class="stat-item"><h3>100%</h3><p>Safety Record</p></div>
+        <div class="stat-item"><h3>24/7</h3><p>Support</p></div>
+        <div class="stat-item"><h3>Expert</h3><p>Technicians</p></div>
+    </section>
 
-<section class="section" id="services">
-<div class="container">
-<h2>Our Services</h2>
+    <section id="about" class="about">
+        <h2>Engineering Trust Since Day One</h2>
+        <p>"At Eminent Elevators, we don't just move people; we move businesses forward with precision engineering and uncompromising safety. Our focus is on the long-term reliability of every cable, motor, and cabin we install."</p>
+    </section>
 
-<div class="grid">
-<div class="card">
-<h3>Lift Installation</h3>
-<p>Complete elevator installation with modern technology.</p>
-</div>
+    <section id="services" class="services">
+        <div class="services-header">
+            <h2>Our Core Solutions</h2>
+        </div>
+        <div class="service-grid">
+            <div class="service-card">
+                <h3>Commercial Installation</h3>
+                <p>High-speed, heavy-duty traction elevators designed for the modern Hyderabad skyline. Built for high traffic and maximum uptime.</p>
+            </div>
+            <div class="service-card">
+                <h3>Residential Luxury</h3>
+                <p>Custom-tailored home lifts that blend seamlessly with your interior architecture, providing comfort and accessibility.</p>
+            </div>
+            <div class="service-card">
+                <h3>Advanced Modernization</h3>
+                <p>Integrating energy-efficient motors and AI-driven control systems into existing infrastructure to reduce power costs.</p>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<h3>AMC Maintenance</h3>
-<p>Regular servicing for smooth and safe operation.</p>
-</div>
+    <section class="process">
+        <h2>How We Work</h2>
+        <div class="process-step">
+            <div class="step-num">01</div>
+            <div class="step-text"><h4>Technical Site Survey</h4><p>We analyze your shaft dimensions and structural integrity to recommend the perfect lift model.</p></div>
+        </div>
+        <div class="process-step">
+            <div class="step-num">02</div>
+            <div class="step-text"><h4>Precision Engineering</h4><p>Components are sourced from world-class manufacturers and tested for durability.</p></div>
+        </div>
+        <div class="process-step">
+            <div class="step-num">03</div>
+            <div class="step-text"><h4>Certified Installation</h4><p>Our experts execute the installation with a focus on silent operation and safety compliance.</p></div>
+        </div>
+    </section>
 
-<div class="card">
-<h3>Modernization</h3>
-<p>Upgrade old lifts with new systems and features.</p>
-</div>
-</div>
+    <section id="projects" class="gallery">
+        <h2>Project Showcase</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="1000164952.jpg" alt="Shaft Work"></div>
+            <div class="gallery-item"><img src="1000146834.jpg" alt="Service Lift"></div>
+            <div class="gallery-item"><img src="1000164952.jpg" alt="Cables"></div> <div class="gallery-item"><img src="1000146834.jpg" alt="Interior"></div>
+        </div>
+    </section>
 
-</div>
-</section>
+    <section id="contact" class="contact">
+        <h2>Start Your Project</h2>
+        <p>Ready for a world-class elevator solution?</p>
+        <div class="contact-info">
+            <p><strong>Phone:</strong> +91 8978625575</p>
+            <p><strong>Location:</strong> Hyderabad, Telangana</p>
+            <br>
+            <a href="https://wa.me/8978625575" class="btn-gold">Chat on WhatsApp</a>
+        </div>
+    </section>
 
-<section class="section" id="projects">
-<div class="container">
-<h2>Our Projects</h2>
-
-<div class="grid gallery">
-<img src="assets/lift-main.jpg">
-<img src="assets/lift-door.jpg">
-<img src="assets/lift-panel.jpg">
-</div>
-
-</div>
-</section>
-
-<section class="section" id="contact">
-<div class="container">
-<h2>Contact Us</h2>
-
-<p><b>Phone:</b> <a href="tel:+918978625575">8978625575</a></p>
-<p><b>Location:</b> Hyderabad</p>
-
-<iframe src="https://www.google.com/maps?q=Hyderabad&output=embed"
-width="100%" height="250"></iframe>
-
-</div>
-</section>
-
-<footer>
-<p>© 2026 Eminent Elevators</p>
-</footer>
-
-<a class="whatsapp" href="https://wa.me/918978625575">WhatsApp</a>
+    <footer>
+        <p>&copy; 2026 Eminent Elevators. All Rights Reserved. | Designed for Excellence.</p>
+    </footer>
 
 </body>
 </html>
