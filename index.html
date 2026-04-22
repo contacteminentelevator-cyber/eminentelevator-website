@@ -3,122 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eminent Elevators | Engineering Excellence Hyderabad</title>
+    <title>Eminent Elevators | Premier Lift Solutions Hyderabad</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --gold: #D4AF37;
-            --white: #ffffff;
-            --black: #0a0a0a;
-            --glass: rgba(255, 255, 255, 0.05);
-        }
-
+        :root { --gold: #D4AF37; --white: #ffffff; --black: #0a0a0a; --dark-gray: #151515; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--black); line-height: 1.6; }
 
-        /* --- PREMIUM HEADER --- */
+        /* HEADER */
         nav { 
             position: fixed; top: 0; width: 100%; z-index: 1000;
             display: flex; justify-content: space-between; align-items: center;
-            padding: 25px 8%; background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 15px 5%; background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .logo { font-weight: 900; font-size: 1.6rem; color: var(--white); letter-spacing: 2px; }
-        .logo span { font-weight: 300; color: var(--gold); }
-        .nav-cta { 
-            background: var(--gold); color: #000; padding: 12px 24px; 
-            text-decoration: none; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;
-            transition: 0.3s;
-        }
-        .nav-cta:hover { background: var(--white); }
+        .logo { font-weight: 900; font-size: 1.1rem; color: var(--white); letter-spacing: 1px; text-transform: uppercase; }
+        .logo span { color: var(--gold); font-weight: 300; }
+        .nav-cta { background: var(--gold); color: #000; padding: 10px 18px; text-decoration: none; font-weight: 800; font-size: 0.7rem; border-radius: 2px; }
 
-        /* --- HERO SECTION --- */
+        /* HERO */
         .hero {
             height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('1000164952.jpg');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('1000164952.jpg'), #111;
             background-size: cover; background-position: center;
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            text-align: center; color: var(--white); padding: 0 5%;
+            text-align: center; color: var(--white); padding: 0 8%;
         }
-        .hero h1 { font-size: clamp(3rem, 10vw, 6rem); font-weight: 900; line-height: 0.9; text-transform: uppercase; margin-bottom: 20px; }
-        .hero h1 span { color: var(--gold); }
-        .hero p { font-size: 1.2rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 40px; opacity: 0.9; }
+        .hero p { color: var(--gold); text-transform: uppercase; letter-spacing: 4px; font-size: 0.8rem; font-weight: 700; margin-bottom: 10px; }
+        .hero h1 { font-size: 3.2rem; font-weight: 900; line-height: 1.1; margin-bottom: 30px; text-transform: uppercase; }
 
-        /* --- STATS SECTION --- */
-        .stats { background: var(--black); color: var(--white); padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; text-align: center; }
-        .stat-card h2 { font-size: 3rem; color: var(--gold); font-weight: 900; }
-        .stat-card p { text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; color: #888; }
+        /* STATS BAR */
+        .stats { background: var(--black); color: var(--white); padding: 40px 5%; display: flex; justify-content: space-around; text-align: center; border-bottom: 1px solid #222; }
+        .stat-item h2 { font-size: 1.8rem; color: var(--gold); }
+        .stat-item p { font-size: 0.6rem; text-transform: uppercase; color: #777; letter-spacing: 1px; }
 
-        /* --- SERVICES SECTION --- */
-        .services { padding: 100px 10%; background: #fcfcfc; }
-        .section-title { font-size: 2.5rem; font-weight: 900; text-align: center; margin-bottom: 60px; text-transform: uppercase; }
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--white); padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border-left: 5px solid var(--gold); }
-        .card h3 { margin-bottom: 15px; text-transform: uppercase; font-size: 1.2rem; }
+        /* SERVICES */
+        .section-padding { padding: 100px 8%; }
+        .section-title { font-size: 2.2rem; font-weight: 900; text-align: center; margin-bottom: 50px; text-transform: uppercase; letter-spacing: -1px; }
+        .service-card { background: #fdfdfd; padding: 40px; margin-bottom: 30px; border-top: 4px solid var(--gold); box-shadow: 0 15px 40px rgba(0,0,0,0.05); }
+        .service-card h3 { font-size: 1.3rem; margin-bottom: 15px; text-transform: uppercase; }
 
-        /* --- SHOWCASE SECTION --- */
-        .showcase { display: flex; flex-wrap: wrap; background: var(--black); color: var(--white); }
-        .showcase-img { flex: 1; min-width: 350px; min-height: 500px; background: url('1000146834.jpg'); background-size: cover; background-position: center; }
-        .showcase-text { flex: 1; padding: 100px 8%; min-width: 350px; }
-        .showcase-text h2 { font-size: 3rem; font-weight: 900; margin-bottom: 25px; line-height: 1; }
-        .showcase-text p { font-size: 1.1rem; color: #aaa; margin-bottom: 30px; }
+        /* PROCESS (THE LONG PART) */
+        .process { background: var(--dark-gray); color: var(--white); }
+        .step { margin-bottom: 40px; border-left: 2px solid var(--gold); padding-left: 20px; }
+        .step h4 { color: var(--gold); text-transform: uppercase; font-size: 0.9rem; margin-bottom: 5px; }
 
-        /* --- FOOTER --- */
-        footer { padding: 80px 10%; background: #050505; color: #444; text-align: center; border-top: 1px solid #111; }
-        .footer-logo { color: var(--white); font-weight: 900; font-size: 1.5rem; margin-bottom: 20px; }
+        /* QUOTATION BOX */
+        .quote-box { background: var(--gold); color: var(--black); padding: 60px 8%; text-align: center; }
+        .quote-box h2 { font-size: 2rem; font-weight: 900; margin-bottom: 20px; }
+        .whatsapp-btn { display: inline-block; background: var(--black); color: var(--white); padding: 20px 40px; text-decoration: none; font-weight: 900; font-size: 1.1rem; border-radius: 5px; margin-top: 10px; }
+
+        /* FOOTER */
+        footer { padding: 60px 8%; background: #000; color: #666; text-align: center; }
+        .footer-links { margin-top: 20px; font-size: 0.9rem; color: var(--gold); font-weight: 700; }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="logo">EMINENT<span>ELEVATORS</span></div>
-        <a href="https://wa.me/8978625575" class="nav-cta">WhatsApp Consultation</a>
+        <a href="https://wa.me/918978625575?text=Hi%20Eminent%20Elevators,%20I%20would%20like%20to%20get%20a%20quotation%20for%20a%20lift%20installation." class="nav-cta">WHATSAPP</a>
     </nav>
 
     <section class="hero">
-        <p>Expertise in Motion</p>
-        <h1>LIFTING<br><span>STANDARDS</span></h1>
-        <a href="#services" style="color: var(--white); text-decoration: none; font-weight: 700; border-bottom: 2px solid var(--gold); padding-bottom: 5px;">View Our Services</a>
+        <p>Expert Engineering</p>
+        <h1>LIFTING<br>STANDARDS</h1>
+        <a href="#quote" style="background: var(--gold); color: black; padding: 18px 35px; text-decoration: none; font-weight: 900; border-radius: 3px;">GET FREE QUOTATION</a>
     </section>
 
     <section class="stats">
-        <div class="stat-card"><h2>100%</h2><p>Safety Rating</p></div>
-        <div class="stat-card"><h2>24/7</h2><p>Maintenance</p></div>
-        <div class="stat-card"><h2>15+</h2><p>Years Experience</p></div>
+        <div class="stat-item"><h2>100%</h2><p>Safety</p></div>
+        <div class="stat-item"><h2>24/7</h2><p>Support</p></div>
+        <div class="stat-item"><h2>15+</h2><p>Experience</p></div>
     </section>
 
-    <section id="services" class="services">
-        <h2 class="section-title">Vertical Solutions</h2>
-        <div class="service-grid">
-            <div class="card">
-                <h3>Heavy Duty Installation</h3>
-                <p>Engineered for high-traffic commercial buildings and industrial warehouses in Hyderabad.</p>
-            </div>
-            <div class="card">
-                <h3>Residential Luxury</h3>
-                <p>Custom home lifts designed with premium materials to match your villa's unique aesthetic.</p>
-            </div>
-            <div class="card">
-                <h3>High-Tech Modernization</h3>
-                <p>Upgrade your old lift with the latest energy-efficient motors and smart control panels.</p>
-            </div>
+    <section class="section-padding">
+        <h2 class="section-title">Professional Solutions</h2>
+        <div class="service-card">
+            <h3>High-Rise Installation</h3>
+            <p>We specialize in heavy-duty traction elevators for commercial buildings, designed for speed and absolute safety.</p>
+        </div>
+        <div class="service-card">
+            <h3>Residential Lifts</h3>
+            <p>Custom home elevators featuring premium marble interiors and silent motor technology for the ultimate luxury experience.</p>
         </div>
     </section>
 
-    <section class="showcase">
-        <div class="showcase-img"></div>
-        <div class="showcase-text">
-            <h2>DESIGNED FOR PERFORMANCE</h2>
-            <p>Every Eminent Elevator installation is a blend of precision engineering and luxury design. We use the highest quality steel and marble finishes to ensure your lift isn't just a machine, but a masterpiece.</p>
-            <p><strong>Service Area:</strong> Telangana & Andhra Pradesh</p>
-            <a href="https://wa.me/8978625575" class="nav-cta">Contact Founder Directly</a>
+    <section class="section-padding process">
+        <h2 class="section-title" style="color: white;">Our Process</h2>
+        <div class="step">
+            <h4>01. Site Survey</h4>
+            <p>Our engineers perform a 50-point technical check of your shaft and structure.</p>
         </div>
+        <div class="step">
+            <h4>02. Design & Engineering</h4>
+            <p>We source high-grade steel and international standard components for your build.</p>
+        </div>
+        <div class="step">
+            <h4>03. Precision Installation</h4>
+            <p>Every cable and rail is aligned with laser precision to ensure a vibration-free ride.</p>
+        </div>
+    </section>
+
+    <section id="quote" class="quote-box">
+        <h2>Ready for a Quotation?</h2>
+        <p>Send us a message on WhatsApp for an immediate response and technical consultation.</p>
+        <a href="https://wa.me/918978625575?text=Hi%20Eminent%20Elevators,%20I%20would%20like%20to%20get%20a%20quotation%20for%20a%20lift%20installation." class="whatsapp-btn">MESSAGE +91 89786 25575</a>
+    </section>
+
+    <section class="section-padding" style="text-align: center;">
+        <h2 class="section-title">Client Trust</h2>
+        <p style="font-style: italic; color: #555;">"Eminent Elevators provided a world-class service for our new commercial project in Hyderabad. Their team is professional and highly skilled."</p>
+        <p style="margin-top: 15px; font-weight: 900; font-size: 0.8rem; color: var(--gold);">— PROJECT MANAGER, HYDERABAD</p>
     </section>
 
     <footer>
-        <div class="footer-logo">EMINENT</div>
-        <p>&copy; 2026 Eminent Elevator Solutions | Hyderabad, India</p>
-        <p style="margin-top: 10px; font-size: 0.8rem;">Professional Installation • AMC Maintenance • Modernization</p>
+        <p>EMINENT ELEVATOR SOLUTIONS</p>
+        <p>Hyderabad | Telangana | India</p>
+        <div class="footer-links">Contact: +91 8978625575</div>
+        <p style="margin-top: 30px; font-size: 0.7rem;">© 2026 EMINENT. ALL RIGHTS RESERVED.</p>
     </footer>
 
 </body>
